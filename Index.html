@@ -1,0 +1,70 @@
+// TubeEarn Full UI (Frontend) - YouTube Style Responsive Layout // Tech Stack: React + Tailwind CSS
+
+import React from "react"; import { FaHome, FaVideo, FaUpload, FaUserCircle, FaSearch, FaBell, FaBars } from "react-icons/fa";
+
+export default function TubeEarnApp() { return ( <div className="min-h-screen bg-gray-100"> {/* Top Navigation */} <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md sticky top-0 z-50"> <div className="flex items-center gap-2"> <FaBars className="text-xl" /> <span className="text-xl font-bold text-red-600">TubeEarn</span> </div> <div className="flex-1 max-w-md mx-4"> <div className="flex items-center border rounded-full px-2 py-1"> <input
+type="text"
+placeholder="Search..."
+className="flex-1 outline-none px-2 py-1"
+/> <FaSearch className="text-gray-600" /> </div> </div> <div className="flex items-center gap-4 text-xl"> <FaBell /> <FaUserCircle /> </div> </div>
+
+{/* Main Content */}
+  <div className="flex">
+    {/* Sidebar (Collapsible Future) */}
+    <div className="hidden md:block w-60 bg-white border-r p-4 space-y-3">
+      <button className="w-full text-left">🎥 Creator Zone</button>
+      <button className="w-full text-left">Upload Video</button>
+      <button className="w-full text-left">Upload Shorts</button>
+      <button className="w-full text-left">Live Stream</button>
+      <button className="w-full text-left">Monetization</button>
+      <hr />
+      <button className="w-full text-left">💘 Dating Section</button>
+      <button className="w-full text-left">Match</button>
+      <button className="w-full text-left">Video Chat</button>
+      <button className="w-full text-left">Like & Follow</button>
+      <hr />
+      <button className="w-full text-left">🛒 Shopping Mall</button>
+      <button className="w-full text-left">Buyer Account</button>
+      <button className="w-full text-left">Seller Login</button>
+      <button className="w-full text-left">Products</button>
+      <hr />
+      <button className="w-full text-left">🎬 Video Editors</button>
+      <button className="w-full text-left">Photo to Video</button>
+      <button className="w-full text-left">Video to Video</button>
+      <button className="w-full text-left">Face Camera Effects</button>
+      <hr />
+      <button className="w-full text-left">🎵 Audio Editor</button>
+      <button className="w-full text-left">🕹️ Gaming Zone (Coming Soon)</button>
+      <button className="w-full text-left">📚 Education System</button>
+      <button className="w-full text-left">💼 Career</button>
+    </div>
+
+    {/* Video Feed */}
+    <div className="flex-1 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {/* Placeholder Video Cards */}
+      {[...Array(12)].map((_, idx) => (
+        <div
+          key={idx}
+          className="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg cursor-pointer"
+        >
+          <div className="h-40 bg-gray-300" />
+          <div className="p-3">
+            <h3 className="font-semibold text-sm">Sample Video Title {idx + 1}</h3>
+            <p className="text-xs text-gray-500">Uploaded by User{idx + 1}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Bottom Navigation for Mobile */}
+  <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around p-2 text-xl">
+    <FaHome />
+    <FaVideo />
+    <FaUpload />
+    <FaUserCircle />
+  </div>
+</div>
+
+); }
+
