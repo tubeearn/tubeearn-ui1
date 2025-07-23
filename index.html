@@ -1,189 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TubeEarn – Monetization Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TubeEarn Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #e6f2ff;
+      box-sizing: border-box;
       font-family: sans-serif;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #004080;
-      color: white;
-      padding: 10px 20px;
-    }
-    header h1 {
-      font-size: 20px;
-      margin: 0;
-    }
-    .settings-icon {
-      font-size: 20px;
-      cursor: pointer;
-    }
-    .settings-panel {
-      display: none;
-      background: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin: 20px auto;
-      max-width: 800px;
-    }
-    .section {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 15px;
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #004080;
-    }
-    video {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .skip-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #000;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      display: none;
-      z-index: 2;
-      border-radius: 5px;
-    }
-    .btns {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .btns button {
-      background: #004080;
-      color: #fff;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+    }body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+nav {
+  background: #8a2be2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  color: white;
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav .menu {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav .menu i {
+  cursor: pointer;
+}
+
+.section-title {
+  margin: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.video-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 0 20px 20px;
+}
+
+.video-box {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-box video {
+  width: 100%;
+  display: block;
+}
+
+.settings-panel {
+  display: none;
+  padding: 20px;
+  background: #fff8dc;
+  border-top: 2px solid #8a2be2;
+}
+
+.ad-box {
+  margin: 20px;
+  padding: 10px;
+  background: #ffefef;
+  text-align: center;
+  font-weight: bold;
+  color: #c00;
+  border-radius: 8px;
+}
+
   </style>
-</head>
-<body>
+</head><body>
+  <nav>
+    <div class="logo">TubeEarn</div>
+    <div class="menu">
+      <i class="fas fa-home" title="Home"></i>
+      <i class="fas fa-plus-circle" title="Create"></i>
+      <i class="fas fa-shopping-cart" title="Shopping"></i>
+      <i class="fas fa-graduation-cap" title="Education"></i>
+      <i class="fas fa-microphone" title="Singing"></i>
+      <i class="fas fa-heart" title="Dating"></i>
+      <i class="fas fa-clapperboard" title="Video Editor"></i>
+      <i class="fas fa-headphones" title="Audio Editor"></i>
+      <i class="fas fa-store" title="Marketplace"></i>
+      <i class="fas fa-mobile" title="Face Swipe"></i>
+      <i class="fas fa-briefcase" title="Career"></i>
+      <i class="fas fa-bell" title="Upcoming"></i>
+      <i class="fas fa-user" title="Account"></i>
+      <i class="fas fa-wallet" title="Wallet"></i>
+      <i class="fas fa-cog" title="Settings" onclick="toggleSettings()"></i>
+    </div>
+  </nav>  <div class="ad-box">
+    🔥 Promote your video now and earn rewards! 🔥
+  </div>  <div class="section-title">🔥 Trending Videos</div>
+  <div class="video-section" id="long-videos">
+    <div class="video-box">
+      <video controls src="video1.mp4" onplay="showAdBefore(this)"></video>
+    </div>
+    <div class="video-box">
+      <video controls src="video2.mp4" onplay="showAdBefore(this)"></video>
+    </div>
+  </div>  <div class="section-title">🎥 Shorts</div>
+  <div class="video-section" id="shorts">
+    <div class="video-box">
+      <video controls muted src="short1.mp4" onplay="handleShortPlay(this)"></video>
+    </div>
+    <div class="video-box">
+      <video controls muted src="short2.mp4" onplay="handleShortPlay(this)"></video>
+    </div>
+  </div>  <div class="section-title">🎞️ Movies</div>
+  <div class="video-section">
+    <div class="video-box">
+      <video controls src="movie1.mp4" onplay="showAdBefore(this)"></video>
+    </div>
+  </div>  <div class="settings-panel" id="settings">
+    <h3>⚙️ Settings</h3>
+    <p>Here you can manage your monetization, roles, and other preferences.</p>
+    <!-- Add more options here -->
+  </div>  <script>
+    let shortPlayCount = 0;
 
-<header>
-  <h1>🎥 TubeEarn</h1>
-  <div class="settings-icon" onclick="toggleSettings()">⚙️</div>
-</header>
-
-<div id="settingsPanel" class="settings-panel">
-  <h3>📊 Monetization Settings</h3>
-  <ul>
-    <li>✅ Ad Control: Auto-play & Skippable Ads</li>
-    <li>📈 Long Video Revenue: 55% User / 45% Platform</li>
-    <li>📹 Shorts Monetization: Ad every 10 scrolls</li>
-    <li>🎯 Requirements:
-      <ul>
-        <li>🔒 500 Subs + 1000 Hrs (Long Videos)</li>
-        <li>🎬 400 Subs + 20,000 Views (Shorts)</li>
-      </ul>
-    </li>
-    <li>💰 Earnings via AdSense (after approval)</li>
-  </ul>
-</div>
-
-<h2>🎬 Long Video with 5s Ad</h2>
-<div class="section" style="position: relative;">
-  <button id="skipAdBtn" class="skip-btn">⏭️ Skip Ad</button>
-  <video id="longVideoPlayer" controls autoplay></video>
-</div>
-
-<h2>📱 Shorts Section (Ad After Every 10 Videos)</h2>
-<div class="section" id="shorts-container">
-  <video id="shortVideoPlayer" controls autoplay></video>
-</div>
-<div class="btns">
-  <button onclick="playNextShort()">▶️ Next Short</button>
-</div>
-
-<script>
-  // ========== SETTINGS PANEL ==========
-  function toggleSettings() {
-    const panel = document.getElementById('settingsPanel');
-    panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
-  }
-
-  // ========== LONG VIDEO WITH AD ==========
-  const longVideo = document.getElementById('longVideoPlayer');
-  const skipBtn = document.getElementById('skipAdBtn');
-  const adVideo = 'ad.mp4';
-  const mainVideo = 'movie.mp4';
-  let isAdPlaying = true;
-
-  longVideo.src = adVideo;
-
-  longVideo.addEventListener('loadedmetadata', () => {
-    if (isAdPlaying) {
-      setTimeout(() => {
-        skipBtn.style.display = 'block';
-      }, 5000);
-    }
-  });
-
-  skipBtn.addEventListener('click', () => {
-    longVideo.src = mainVideo;
-    longVideo.play();
-    skipBtn.style.display = 'none';
-    isAdPlaying = false;
-  });
-
-  longVideo.addEventListener('ended', () => {
-    if (isAdPlaying) {
-      longVideo.src = mainVideo;
-      longVideo.play();
-      isAdPlaying = false;
-    }
-  });
-
-  // ========== SHORTS ==========
-  let shortCount = 0;
-  const shorts = [
-    'short-1.mp4','short-2.mp4','short-3.mp4',
-    'short-4.mp4','short-5.mp4','short-6.mp4',
-    'short-7.mp4','short-8.mp4','short-9.mp4',
-    'short-10.mp4','short-11.mp4'
-  ];
-  const shortPlayer = document.getElementById('shortVideoPlayer');
-
-  function playNextShort() {
-    shortCount++;
-
-    if (shortCount % 10 === 0) {
-      shortPlayer.src = 'short-ad.mp4'; // Show ad after 10 shorts
-    } else {
-      const nextShort = shorts[shortCount % shorts.length];
-      shortPlayer.src = nextShort;
+    function toggleSettings() {
+      const panel = document.getElementById('settings');
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
     }
 
-    shortPlayer.play();
-  }
+    function showAdBefore(videoEl) {
+      const originalSrc = videoEl.src;
+      videoEl.src = 'ad.mp4';
+      videoEl.onended = () => {
+        videoEl.src = originalSrc;
+        videoEl.play();
+      };
+      videoEl.play();
+    }
 
-  // Auto load first short
-  shortPlayer.src = shorts[0];
-</script>
-
-</body>
-</html>
+    function handleShortPlay(videoEl) {
+      shortPlayCount++;
+      if (shortPlayCount % 10 === 0) {
+        const originalSrc = videoEl.src;
+        videoEl.src = 'short-ad.mp4';
+        videoEl.onended = () => {
+          videoEl.src = originalSrc;
+          videoEl.play();
+        };
+        videoEl.play();
+      }
+    }
+  </script></body></html>
