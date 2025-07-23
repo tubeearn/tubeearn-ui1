@@ -1,80 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TubeEarn Navigation</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background: #f5f5f5;
-    }
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }.welcome-bar {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-    .horizontal-nav {
-      display: flex;
-      overflow-x: auto;
-      white-space: nowrap;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+.top-navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+}
 
-    .nav-item {
-      flex: 0 0 auto;
-      background-color: #d70000;
-      color: white;
-      text-align: center;
-      padding: 10px 12px;
-      margin: 8px 6px;
-      border-radius: 10px;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      min-width: 170px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
+.nav-item {
+  margin: 8px;
+  padding: 10px 16px;
+  background-color: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  text-align: center;
+}
 
-    .nav-item:hover {
-      transform: scale(1.05);
-      background-color: #b00000;
-    }
+.nav-item:hover {
+  background-color: #ddd;
+}
 
-    .nav-icon {
-      font-size: 18px;
-    }
+@media screen and (max-width: 768px) {
+  .nav-item {
+    flex: 1 1 calc(50% - 20px);
+    margin: 6px;
+  }
+}
 
-    /* Scrollbar hidden for mobile UI look */
-    .horizontal-nav::-webkit-scrollbar {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      .nav-item {
-        min-width: 160px;
-        font-size: 13px;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <div class="horizontal-nav">
-    <div class="nav-item"><span class="nav-icon">✍️</span> TubeEarn Creator</div>
-    <div class="nav-item"><span class="nav-icon">❤️</span> TubeEarn Dating</div>
-    <div class="nav-item"><span class="nav-icon">📚</span> TubeEarn Education</div>
-    <div class="nav-item"><span class="nav-icon">🎤</span> TubeEarn Singing Platform</div>
-    <div class="nav-item"><span class="nav-icon">🏷️</span> TubeEarn Marketplace</div>
-    <div class="nav-item"><span class="nav-icon">🛍️</span> TubeEarn Shopping Mall</div>
-    <div class="nav-item"><span class="nav-icon">🎬</span> TubeEarn Video Editor</div>
-    <div class="nav-item"><span class="nav-icon">🎧</span> TubeEarn Audio Editor</div>
-    <div class="nav-item"><span class="nav-icon">👤🎥</span> Face Swipe Video</div>
-    <div class="nav-item"><span class="nav-icon">🆕</span> Upcoming Feature</div>
-    <div class="nav-item"><span class="nav-icon">🎮</span> TubeEarn Games</div>
-    <div class="nav-item"><span class="nav-icon">💼</span> TubeEarn Career</div>
+  <div class="welcome-bar">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      Welcome to TubeEarn – The World's #1 Earning & Entertainment Platform for Creators, Speed, Fun, and Future Innovation.
+    </marquee>
+  </div>  <div class="top-navbar">
+    <div class="nav-item">TubeEarn Creator</div>
+    <div class="nav-item">TubeEarn Dating</div>
+    <div class="nav-item">TubeEarn Education</div>
+    <div class="nav-item">TubeEarn Singing Platform</div>
+    <div class="nav-item">TubeEarn Marketplace</div>
+    <div class="nav-item">TubeEarn Shopping Mall</div>
+    <div class="nav-item">TubeEarn Video Editor</div>
+    <div class="nav-item">TubeEarn Audio Editor</div>
+    <div class="nav-item">TubeEarn Face Swipe Video</div>
+    <div class="nav-item">TubeEarn Upcoming Feature</div>
+    <div class="nav-item">TubeEarn Games</div>
+    <div class="nav-item">TubeEarn Career</div>
   </div>
-
 </body>
 </html>
