@@ -1,105 +1,52 @@
-<!-- TubeEarn UI Homepage --><!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn - Home</title>
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}
-    body {background-color: #fff; color: #000;}
-    header {
-      background: linear-gradient(90deg, #ff5f6d, #ffc371);
-      padding: 10px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      color: white;
-    }
-    .top-bar {
-      display: flex;
-      overflow-x: auto;
-      padding: 10px;
-      background-color: #f9f9f9;
-    }
-    .top-bar div {
-      margin-right: 12px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background: #eee;
-      cursor: pointer;
-      white-space: nowrap;
-      font-size: 14px;
-    }
-    .story-bar {
-      display: flex;
-      overflow-x: auto;
-      padding: 10px;
-    }
-    .story {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 3px solid #ff5f6d;
-      margin-right: 10px;
-    }
-    .main-content {
-      padding: 12px;
-    }
-    .video-box {
-      background-color: #fafafa;
-      border-radius: 12px;
-      padding: 10px;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      background: #fff;
-      border-top: 1px solid #ccc;
-    }
-    .bottom-nav div {
-      text-align: center;
-      font-size: 12px;
-      color: #555;
-    }
-    .icon { font-size: 20px; display: block; margin-bottom: 4px; }
-  </style>
+  <title>TubeEarn</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    Welcome to TubeEarn 21 — World’s #1 Fast Growing Earning Platform
-  </header>  <div class="top-bar">
-    <div>Creator</div>
-    <div>Upload</div>
-    <div>Shorts</div>
-    <div>Movies</div>
-    <div>Music</div>
-    <div>Live</div>
-    <div>Career</div>
-    <div>Audio Editor</div>
-    <div>Video Editor</div>
-    <div>Shopping Mall</div>
-    <div>Marketplace</div>
-  </div>  <div class="story-bar">
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-  </div>  <div class="main-content">
-    <div class="video-box">[Random Short or Long Video Content]</div>
-    <div class="video-box">[Random Short or Long Video Content]</div>
-    <div class="video-box">[Random Short or Long Video Content]</div>
-  </div>  <div class="bottom-nav">
-    <div><span class="icon">🏠</span>Home</div>
-    <div><span class="icon">📹</span>Shorts</div>
-    <div><span class="icon">➕</span>Create</div>
-    <div><span class="icon">💼</span>Market</div>
-    <div><span class="icon">👤</span>Account</div>
-  </div>
+    <nav class="top-nav">
+      <div class="nav-box">Creator</div>
+      <div class="nav-box">Dating</div>
+      <div class="nav-box">Singing Site</div>
+      <div class="nav-box">Shopping Mall</div>
+      <div class="nav-box">Marketplace</div>
+      <div class="nav-box">Video</div>
+      <div class="nav-box">Video Editing</div>
+      <div class="nav-box">Audio Editing</div>
+      <div class="nav-box">Career</div>
+      <div class="nav-box">Coming Features</div>
+      <div class="nav-box">TubeEarn AI <span class="settings-icon">⚙️</span></div>
+      <div class="nav-box">Education</div>
+    </nav>
+    <div class="welcome-bar">
+      <marquee>Welcome to 51 TubeEarn – World’s No.1 Earning Platform | Fast & Growth</marquee>
+    </div>
+  </header>  <section class="stories-section">
+    <div class="story">Story 1</div>
+    <div class="story">Story 2</div>
+    <div class="story">Story 3</div>
+  </section>  <main class="video-feed">
+    <div class="video-box">
+      <video controls src="sample1.mp4"></video>
+      <div class="video-info">
+        <p>₹250 earned · 5.2K views</p>
+      </div>
+    </div>
+    <div class="video-box">
+      <video controls src="sample2.mp4"></video>
+      <div class="video-info">
+        <p>₹100 earned · 2.3K views</p>
+      </div>
+    </div>
+    <!-- More random videos -->
+  </main>  <footer class="bottom-nav">
+    <div class="nav-icon">Shorts</div>
+    <div class="nav-icon plus">➕</div>
+    <div class="nav-icon">Subscriptions</div>
+    <div class="nav-icon">Account</div>
+  </footer>
 </body>
 </html>
