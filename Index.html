@@ -1,91 +1,112 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TubeEarn UI</title>
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: Arial, sans-serif; background: #f4f4f4; color: #333;}
-    header {display: flex; align-items: center; justify-content: space-between; background: #111; color: #fff; padding: 10px 20px;}
-    .logo {height: 40px;}
-    nav button {
-      margin-left: 10px;
-      padding: 8px 16px;
-      background: #f90;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
     }
-    nav button:hover {background: #fb0;}
-    .section {display: none; padding: 20px;}
-    .active {display: block;}
-    footer {
-      background: #111;
-      color: #fff;
-      padding: 20px;
+    header {
+      background-color: #1d3557;
+      color: white;
+      padding: 15px;
       text-align: center;
-      margin-top: 50px;
     }
-    .highlight {
-      color: #f90;
+    nav {
+      background-color: #457b9d;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav button {
+      background-color: #a8dadc;
+      border: none;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
       font-weight: bold;
-      font-size: 1.2rem;
+    }
+    nav button:hover {
+      background-color: #f1faee;
+    }
+    .section {
+      display: none;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .active {
+      display: block;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/6RLHX6L.png" alt="TubeEarn Logo" class="logo" />
-    <nav>
-      <button onclick="showSection('home')">Home</button>
-      <button onclick="showSection('creator')">Create</button>
-      <button onclick="showSection('shopping')">Shopping Mall</button>
-      <button onclick="showSection('education')">Education</button>
-      <button onclick="showSection('singing')">Singing</button>
-      <button onclick="showSection('dating')">Dating</button>
-      <button onclick="showSection('video')">Video Editor</button>
-      <button onclick="showSection('audio')">Audio Editor</button>
-    </nav>
-  </header>  <main>
-    <section id="home" class="section active">
-      <h1>Welcome to TubeEarn</h1>
-      <p class="highlight">World’s Fastest Growing Platform – No Time Waste, Only Money Earn!</p>
-    </section>
-    <section id="creator" class="section">
-      <h2>Become a Creator</h2>
-      <p>Upload short & long videos, earn through views, gifts and ads.</p>
-    </section>
-    <section id="shopping" class="section">
-      <h2>TubeEarn Shopping Mall</h2>
-      <p>Marketplace coming soon with worldwide delivery support.</p>
-    </section>
-    <section id="education" class="section">
-      <h2>Raj Education System</h2>
-      <p>Learn from the best AI-powered teachers around the world.</p>
-    </section>
-    <section id="singing" class="section">
-      <h2>Singing Feature</h2>
-      <p>Record songs, apply effects, and share with fans worldwide.</p>
-    </section>
-    <section id="dating" class="section">
-      <h2>Dating and Video Match</h2>
-      <p>Find and connect with people via video chat and matching.</p>
-    </section>
-    <section id="video" class="section">
-      <h2>Video Editor</h2>
-      <p>Use our advanced editor to enhance your content.</p>
-    </section>
-    <section id="audio" class="section">
-      <h2>Audio Editor</h2>
-      <p>Remix, edit and create trending audio tracks for your videos.</p>
-    </section>
-  </main>  <footer>
-    &copy; 2025 TubeEarn | <span class="highlight">World’s Fastest Growing Platform</span>
-  </footer>  <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+    <h1>TubeEarn - World's Fastest Multi-System Platform</h1>
+  </header>
+  <nav>
+    <button onclick="showSection('home')">🏠 Home</button>
+    <button onclick="showSection('create')">🎬 Create</button>
+    <button onclick="showSection('shopping')">🛒 Shopping Mall</button>
+    <button onclick="showSection('education')">📚 Education</button>
+    <button onclick="showSection('singing')">🎤 Singing</button>
+    <button onclick="showSection('dating')">💘 Dating</button>
+    <button onclick="showSection('videoeditor')">🎞️ Video Editor</button>
+    <button onclick="showSection('audioeditor')">🎧 Audio Editor</button>
+  </nav>
+
+  <div id="home" class="section active">
+    <h2>Welcome to TubeEarn!</h2>
+    <p>This is the hub for trending videos, earnings summary, news and more. Click any tab above to explore.</p>
+  </div>
+
+  <div id="create" class="section">
+    <h2>Create Account (TubeEarn Creator)</h2>
+    <p>Platform: TubeEarn Dating, Singing, Education & More</p>
+    <p>Click below to start your creator journey:</p>
+    <button onclick="alert('Creator Account Created')">Create Creator Account</button>
+  </div>
+
+  <div id="shopping" class="section">
+    <h2>TubeEarn Shopping Mall</h2>
+    <p>Upcoming eCommerce feature. Buy & Sell directly!</p>
+  </div>
+
+  <div id="education" class="section">
+    <h2>Raj Education System</h2>
+    <p>AI-Powered Online Education Platform for All Countries.</p>
+  </div>
+
+  <div id="singing" class="section">
+    <h2>Singing Feature</h2>
+    <p>Upload your singing videos, collaborate, use music library & more.</p>
+  </div>
+
+  <div id="dating" class="section">
+    <h2>TubeEarn Dating</h2>
+    <p>Meet people, go live, send gifts, and more. Subscription required.</p>
+  </div>
+
+  <div id="videoeditor" class="section">
+    <h2>Video Editor</h2>
+    <p>Coming Soon: Edit and publish your videos with powerful tools.</p>
+  </div>
+
+  <div id="audioeditor" class="section">
+    <h2>Audio Editor</h2>
+    <p>Coming Soon: Trim, remix, and enhance your audio files directly in browser.</p>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
     }
-  </script></body>
+  </script>
+</body>
 </html>
