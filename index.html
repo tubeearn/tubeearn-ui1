@@ -1,137 +1,117 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn - India's No.1 Earning & Entertainment Platform</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeEarn - India's #1 Video Platform</title>
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }body {
-  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-}
-
-header {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }header {
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
 }
 
 header h1 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #00f5ff;
+  width: 100%;
+  font-size: 1.5rem;
 }
 
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.navbar a {
-  margin: 0.4rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #212121;
-  color: #00f5ff;
-  text-decoration: none;
-  border-radius: 12px;
+.nav-item {
+  margin: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
-  font-size: 0.95rem;
+  gap: 4px;
 }
 
-.navbar a i {
-  margin-right: 8px;
-}
-
-.welcome {
-  text-align: center;
-  font-size: 1.6rem;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.content {
-  padding: 2rem;
+.videos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  padding: 10px;
 }
 
-.video-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
+.video-card {
+  background: rgba(0,0,0,0.5);
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
   border-radius: 10px;
-  width: 280px;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .bottom-bar {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  background: #000;
-  padding: 0.6rem;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  background: black;
+  padding: 8px 0;
   color: white;
 }
 
-.bottom-bar i {
-  font-size: 1.3rem;
+.bottom-bar div {
+  text-align: center;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar {
+@media (max-width: 768px) {
+  header {
     flex-direction: column;
   }
 }
 
   </style>
-</head><body>
+</head>
+<body>
   <header>
-    <h1><i class="fa fa-play-circle"></i> TubeEarn</h1>
-    <div class="welcome">Welcome to TubeEarn - World's Fastest Growing Future for Creators & Enjoyment Platform</div>
-  </header>  <nav class="navbar">
-    <a href="#"><i class="fa fa-home"></i> Home</a>
-    <a href="#"><i class="fa fa-video"></i> Shorts</a>
-    <a href="#"><i class="fa fa-tv"></i> Long Videos</a>
-    <a href="#"><i class="fa fa-user"></i> Dating</a>
-    <a href="#"><i class="fa fa-store"></i> Marketplace</a>
-    <a href="#"><i class="fa fa-music"></i> Singing</a>
-    <a href="#"><i class="fa fa-random"></i> Swipe Videos</a>
-    <a href="#"><i class="fa fa-scissors"></i> Video Editor</a>
-    <a href="#"><i class="fa fa-microphone"></i> Audio Editor</a>
-    <a href="#"><i class="fa fa-volume-mute"></i> Vocal Remover</a>
-    <a href="#"><i class="fa fa-magic"></i> Object Remover</a>
-    <a href="#"><i class="fa fa-hourglass-half"></i> Upcoming Features</a>
-    <a href="#"><i class="fa fa-wallet"></i> Wallet</a>
-  </nav>  <div class="content">
-    <div class="video-box">
-      <h3>Suggested Video</h3>
-      <video src="sample.mp4" controls width="100%"></video>
+    <h1>Welcome to TubeEarn - India's #1 Earning Platform</h1>
+    <div class="nav-item">🎥 Home</div>
+    <div class="nav-item">📸 Shorts</div>
+    <div class="nav-item">💰 Wallet</div>
+    <div class="nav-item">🛒 Marketplace</div>
+    <div class="nav-item">🎤 Singing</div>
+    <div class="nav-item">📹 Video Editor</div>
+    <div class="nav-item">🎧 Audio Editor</div>
+    <div class="nav-item">🧼 Vocal Removal</div>
+    <div class="nav-item">🧽 Object Removal</div>
+    <div class="nav-item">🚀 Upcoming</div>
+  </header>  <div class="videos-container">
+    <div class="video-card">
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+      <p>Sample Video 1</p>
     </div>
-    <div class="video-box">
-      <h3>Entertainment</h3>
-      <video src="fun.mp4" controls width="100%"></video>
+    <div class="video-card">
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+      <p>Sample Video 2</p>
+    </div>
+    <div class="video-card">
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+      <p>Sample Video 3</p>
     </div>
   </div>  <div class="bottom-bar">
-    <i class="fa fa-home"></i>
-    <i class="fa fa-search"></i>
-    <i class="fa fa-plus-circle"></i>
-    <i class="fa fa-heart"></i>
-    <i class="fa fa-user-circle"></i>
+    <div onclick="alert('Go to Home')">🏠<br>Home</div>
+    <div onclick="alert('Open Shorts')">🎬<br>Shorts</div>
+    <div onclick="alert('Wallet')">💳<br>Wallet</div>
+    <div onclick="alert('Subscribe to view')">🔔<br>Subscribe</div>
+    <div onclick="alert('Login Required')">👤<br>Account</div>
   </div>
-</body></html>
+</body>
+</html>
