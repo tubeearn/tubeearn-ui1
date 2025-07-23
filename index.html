@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TubeEarn - World's Fastest Multi-System Platform</title>
+  <title>TubeEarn - Multi-System Platform</title>
   <style>
     body {
       margin: 0;
@@ -11,7 +11,7 @@
       background-color: #f8f8f8;
     }
     header {
-      background-color: #123456; /* Dark Blue */
+      background-color: #123456;
       padding: 10px;
       text-align: center;
       color: white;
@@ -45,43 +45,85 @@
       color: #000;
       text-align: center;
       padding: 10px;
-      margin-top: 15px;
+      margin-top: 10px;
     }
     .content {
       padding: 20px;
       text-align: center;
     }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .video-box {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    .video-box img {
+      width: 100%;
+      height: auto;
+    }
+    .video-box h4 {
+      padding: 10px;
+      margin: 0;
+    }
   </style>
+  <script>
+    function loadSection(sectionName) {
+      const content = document.getElementById("mainContent");
+      content.innerHTML = `<h2>Loading ${sectionName}...</h2><p>This section is under construction or coming soon!</p>`;
+    }
+  </script>
 </head>
 <body>
 
   <header>TubeEarn - World's Fastest Multi-System Platform</header>
 
   <nav>
-    <div class="nav-button">🏠 Home</div>
-    <div class="nav-button">🆕 Create</div>
-    <div class="nav-button">🛒 Shopping Mall</div>
-    <div class="nav-button">🎓 Education</div>
-    <div class="nav-button">🎤 Singing</div>
-    <div class="nav-button">💘 Dating</div>
-    <div class="nav-button">🎬 Video Editor</div>
-    <div class="nav-button">🎧 Audio Editor</div>
-    <div class="nav-button">🏪 Marketplace</div>
-    <div class="nav-button">📲 Face Swipe</div>
-    <div class="nav-button">👔 Career</div>
-    <div class="nav-button">🔔 Upcoming</div>
-    <div class="nav-button">👤 Account</div>
-    <div class="nav-button">💰 Wallet</div>
+    <div class="nav-button" onclick="loadSection('Home')">🏠 Home</div>
+    <div class="nav-button" onclick="loadSection('Create')">🆕 Create</div>
+    <div class="nav-button" onclick="loadSection('Shopping Mall')">🛒 Shopping</div>
+    <div class="nav-button" onclick="loadSection('Education')">🎓 Education</div>
+    <div class="nav-button" onclick="loadSection('Singing')">🎤 Singing</div>
+    <div class="nav-button" onclick="loadSection('Dating')">💘 Dating</div>
+    <div class="nav-button" onclick="loadSection('Video Editor')">🎬 Video Editor</div>
+    <div class="nav-button" onclick="loadSection('Audio Editor')">🎧 Audio Editor</div>
+    <div class="nav-button" onclick="loadSection('Marketplace')">🏪 Marketplace</div>
+    <div class="nav-button" onclick="loadSection('Face Swipe')">📲 Face Swipe</div>
+    <div class="nav-button" onclick="loadSection('Career')">👔 Career</div>
+    <div class="nav-button" onclick="loadSection('Upcoming')">🔔 Upcoming</div>
+    <div class="nav-button" onclick="loadSection('Account')">👤 Account</div>
+    <div class="nav-button" onclick="loadSection('Wallet')">💰 Wallet</div>
   </nav>
 
-  <!-- Ad section below navigation bar -->
   <div class="ad-banner">
     🔥 Promote your video now and earn rewards! 🔥
   </div>
 
-  <div class="content">
-    <h2>Welcome to TubeEarn!</h2>
-    <p>This is the hub for trending videos, earnings summary, news and more. Click any tab above to explore.</p>
+  <div class="content" id="mainContent">
+    <h2>🔥 Trending Short Videos</h2>
+    <div class="video-grid">
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+1" alt="Short 1">
+        <h4>Comedy Shorts</h4>
+      </div>
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+2" alt="Short 2">
+        <h4>Romantic Clips</h4>
+      </div>
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+3" alt="Short 3">
+        <h4>Music Performance</h4>
+      </div>
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+4" alt="Short 4">
+        <h4>Education Tips</h4>
+      </div>
+    </div>
   </div>
 
 </body>
