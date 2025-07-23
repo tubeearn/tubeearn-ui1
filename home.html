@@ -7,9 +7,10 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
     }
+
     header {
       background: #ff004f;
       color: white;
@@ -17,171 +18,132 @@
       text-align: center;
     }
 
-    h2 {
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
       padding: 10px;
-      margin-left: 10px;
-      color: #222;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    /* Movies */
+    nav a {
+      text-decoration: none;
+      color: #ff004f;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
     .scroll-horizontal {
       display: flex;
       overflow-x: auto;
-      padding: 10px;
       gap: 10px;
     }
-    .video-card {
+
+    .video-card, .short-video, .long-video, .story {
       min-width: 200px;
       height: 120px;
-      background: #eee;
+      background: #ddd;
       border-radius: 10px;
-      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
     }
 
-    /* Long Videos */
-    .video-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 10px;
-    }
-    .long-video {
-      width: 100%;
-      height: 250px;
-      background: #ccc;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    /* Shorts */
     .shorts-grid {
       display: flex;
-      gap: 10px;
       overflow-x: auto;
-      padding: 10px;
-    }
-    .short-video {
-      min-width: 150px;
-      height: 280px;
-      background: #ddd;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
+      gap: 10px;
     }
 
-    /* Stories */
-    #stories {
-      position: fixed;
-      right: 10px;
-      top: 100px;
-      width: 100px;
-      z-index: 999;
+    .long-video {
+      height: 200px;
     }
-    .story-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+
     .story {
-      width: 100%;
+      min-width: 100px;
       height: 100px;
       background: pink;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    /* Ads */
-    #ads {
-      position: fixed;
-      right: 10px;
-      bottom: 50px;
-      width: 100px;
-      z-index: 999;
-    }
     .ad {
       width: 100%;
       height: 80px;
       background: orange;
-      margin-bottom: 10px;
       border-radius: 10px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    /* Responsive fix */
-    @media (max-width: 768px) {
-      #stories, #ads {
-        display: none;
-      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Welcome to TubeEarn!</h1>
-    <p>This is the hub for trending videos, earnings summary, news and more.</p>
+    <h1>TubeEarn</h1>
+    <p>Earn with your content: Movies, Shorts, Long Videos & more!</p>
   </header>
 
-  <!-- Movies Section -->
+  <nav>
+    <a href="#movies">Movies</a>
+    <a href="#shorts">Shorts</a>
+    <a href="#longvideos">Long Videos</a>
+    <a href="#stories">Stories</a>
+  </nav>
+
   <section id="movies">
-    <h2>🎬 Latest Movies</h2>
+    <h2>🎬 Movies</h2>
     <div class="scroll-horizontal">
       <div class="video-card">Movie 1</div>
       <div class="video-card">Movie 2</div>
       <div class="video-card">Movie 3</div>
-      <div class="video-card">Movie 4</div>
     </div>
   </section>
 
-  <!-- Long Videos Section -->
-  <section id="long-videos">
-    <h2>🔥 Trending Long Videos</h2>
-    <div class="video-list">
-      <div class="long-video">Long Video 1</div>
-      <div class="long-video">Long Video 2</div>
-    </div>
-  </section>
-
-  <!-- Shorts Section -->
   <section id="shorts">
     <h2>📱 Shorts</h2>
     <div class="shorts-grid">
       <div class="short-video">Short 1</div>
       <div class="short-video">Short 2</div>
       <div class="short-video">Short 3</div>
-      <div class="short-video">Short 4</div>
     </div>
   </section>
 
-  <!-- Right Side Stories -->
-  <aside id="stories">
-    <h3>📸 Stories</h3>
-    <div class="story-container">
+  <section id="longvideos">
+    <h2>🔥 Long Videos</h2>
+    <div class="scroll-horizontal">
+      <div class="long-video">Long Video 1</div>
+      <div class="long-video">Long Video 2</div>
+    </div>
+  </section>
+
+  <section id="stories">
+    <h2>📸 Stories</h2>
+    <div class="scroll-horizontal">
       <div class="story">Story 1</div>
       <div class="story">Story 2</div>
       <div class="story">Story 3</div>
     </div>
-  </aside>
+  </section>
 
-  <!-- Right Side Ads -->
-  <aside id="ads">
-    <h3>📢 Ads</h3>
+  <section id="ads">
+    <h2>📢 Sponsored Ads</h2>
     <div class="ad">Ad 1</div>
     <div class="ad">Ad 2</div>
-  </aside>
+  </section>
 
 </body>
 </html>
