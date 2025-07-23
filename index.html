@@ -1,113 +1,153 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TubeEarn - India’s No.1 Earning & Fun Platform</title>
+  <title>U-One</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1600&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 24px;
-      color: #00ffe7;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: rgba(0,0,0,0.6);
-    }
-    nav a {
-      flex: 1 1 80px;
-      text-align: center;
-      padding: 10px;
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid #222;
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
-    }
-    .content {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
-      border-radius: 10px;
-    }
-    .card h3 { color: #00ffd9; }
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-    }
-    .bottom-nav a {
-      color: white;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-      .bottom-nav {
-        flex-direction: row;
-      }
-    }
+    }body {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+header {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid red;
+  font-weight: bold;
+  font-size: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.marquee {
+  background-color: #fff;
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.marquee span {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.features-container {
+  display: flex;
+  overflow-x: auto;
+  background-color: #fff;
+  padding: 10px 5px;
+  gap: 10px;
+  white-space: nowrap;
+  border-bottom: 1px solid #ccc;
+}
+
+.feature-box {
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.feature-box i {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #ff0000;
+}
+
+main {
+  padding: 15px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.video-box {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.bottom-nav a {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.bottom-nav i {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
   </style>
-</head>
-<body>
+</head><body>
   <header>
-    <h1>Welcome to TubeEarn — India’s No.1 Earning and Multiple Fun Platform</h1>
-  </header>  <nav>
-    <a href="#">🎥 Creator</a>
-    <a href="#">🛒 Shopping</a>
-    <a href="#">🎙 Singing</a>
-    <a href="#">📽 Swipe Video</a>
-    <a href="#">🎬 Video Editor</a>
-    <a href="#">🎧 Audio Editor</a>
-    <a href="#">🔊 Vocal Remove</a>
-    <a href="#">🧽 Object Removal</a>
-    <a href="#">🚀 Upcoming</a>
-    <a href="#">💰 Wallet</a>
-  </nav>  <div class="content">
-    <div class="card">
-      <h3>🔥 Trending Shorts</h3>
-      <p>Watch latest viral content.</p>
+    Welcome to U-One
+  </header>  <div class="marquee">
+    <span>India का सबसे बेस्ट अर्निंग साइट और मस्ती मल्टीपल एंजॉयमेंट</span>
+  </div>  <div class="features-container">
+    <div class="feature-box"><i class="fas fa-camera"></i>Creator</div>
+    <div class="feature-box"><i class="fas fa-music"></i>Singing</div>
+    <div class="feature-box"><i class="fas fa-video"></i>Swipe Video</div>
+    <div class="feature-box"><i class="fas fa-film"></i>Video Editor</div>
+    <div class="feature-box"><i class="fas fa-headphones"></i>Audio Editor</div>
+    <div class="feature-box"><i class="fas fa-microphone-slash"></i>Vocal Removal</div>
+    <div class="feature-box"><i class="fas fa-eraser"></i>Video Object Removal</div>
+    <div class="feature-box"><i class="fas fa-bolt"></i>Upcoming Feature</div>
+    <div class="feature-box"><i class="fas fa-store"></i>Marketplace</div>
+    <div class="feature-box"><i class="fas fa-wallet"></i>Wallet</div>
+  </div>  <main>
+    <div class="video-grid">
+      <div class="video-box">🎥 Video 1</div>
+      <div class="video-box">🎥 Video 2</div>
+      <div class="video-box">🎥 Video 3</div>
+      <div class="video-box">🎥 Video 4</div>
     </div>
-    <div class="card">
-      <h3>🎙 Sing & Earn</h3>
-      <p>Upload your voice & get paid.</p>
-    </div>
-    <div class="card">
-      <h3>🎬 Edit Your Videos</h3>
-      <p>Use AI Editor to polish your videos.</p>
-    </div>
-    <div class="card">
-      <h3>💸 Start Earning</h3>
-      <p>Monetize your videos with TubeEarn.</p>
-    </div>
-  </div>  <div class="bottom-nav">
-    <a href="#">🏠 Home</a>
-    <a href="#">📥 APK Download</a>
-    <a href="#">💬 Subscription</a>
-    <a href="#">🔐 Login</a>
-  </div></body>
-</html>
+  </main>  <div class="bottom-nav">
+    <a href="#"><i class="fas fa-home"></i>Home</a>
+    <a href="#"><i class="fas fa-bolt"></i>Shorts</a>
+    <a href="#"><i class="fas fa-circle-plus"></i>Create</a>
+    <a href="#"><i class="fas fa-bell"></i>Activity</a>
+    <a href="#"><i class="fas fa-user"></i>Account</a>
+  </div>
+</body></html>
