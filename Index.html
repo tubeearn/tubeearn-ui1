@@ -42,6 +42,34 @@
     .active {
       display: block;
     }
+    .wallet-toggle {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: #f0f0f0;
+    }
+    .wallet-toggle label {
+      font-weight: bold;
+    }
+    .wallet-toggle input[type="checkbox"] {
+      transform: scale(1.5);
+    }
+    .wallet-form input, .wallet-form button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .wallet-form button {
+      background-color: #1d3557;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .wallet-form button:hover {
+      background-color: #457b9d;
+    }
   </style>
 </head>
 <body>
@@ -58,13 +86,12 @@
     <button onclick="showSection('dating')">💘 Dating</button>
     <button onclick="showSection('videoeditor')">🎞️ Video Editor</button>
     <button onclick="showSection('audioeditor')">🎧 Audio Editor</button>
-    
-    <!-- New Buttons -->
     <button onclick="showSection('marketplace')">🛍️ Marketplace</button>
     <button onclick="showSection('faceswipe')">😊 Face Swipe</button>
     <button onclick="showSection('career')">💼 Career</button>
     <button onclick="showSection('upcoming')">🔔 Upcoming</button>
     <button onclick="showSection('account')">👤 Account</button>
+    <button onclick="showSection('wallet')">💰 Wallet</button>
   </nav>
 
   <div id="home" class="section active">
@@ -108,7 +135,6 @@
     <p>Coming Soon: Trim, remix, and enhance your audio files directly in browser.</p>
   </div>
 
-  <!-- New Sections -->
   <div id="marketplace" class="section">
     <h2>TubeEarn Marketplace</h2>
     <p>Buy, Sell, Exchange digital and physical products.</p>
@@ -132,6 +158,20 @@
   <div id="account" class="section">
     <h2>My Account</h2>
     <p>Manage your profile, security, earnings, and more.</p>
+  </div>
+
+  <div id="wallet" class="section">
+    <h2>TubeEarn Wallet</h2>
+    <div class="wallet-toggle">
+      <label for="walletEnable">Enable Wallet:</label>
+      <input type="checkbox" id="walletEnable" checked>
+    </div>
+    <div class="wallet-form">
+      <h3>Withdraw Earnings</h3>
+      <input type="text" placeholder="Enter Amount (₹ or $)">
+      <input type="text" placeholder="Enter UPI / PayPal / BTC Address">
+      <button onclick="alert('Withdrawal Requested')">Withdraw Now</button>
+    </div>
   </div>
 
   <script>
