@@ -1,124 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>TubeEarn - Home</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
       margin: 0;
       padding: 0;
+      background: #f4f4f4;
     }
     header {
-      background: #000;
-      padding: 10px;
+      background: #ff004f;
+      color: white;
+      padding: 20px;
       text-align: center;
-      font-size: 22px;
-      font-weight: bold;
     }
-    .section-title {
-      font-size: 20px;
-      margin: 10px 15px;
-      color: #ff4444;
+
+    h2 {
+      padding: 10px;
+      margin-left: 10px;
+      color: #222;
     }
-    .video-row {
+
+    /* Movies */
+    .scroll-horizontal {
       display: flex;
       overflow-x: auto;
+      padding: 10px;
       gap: 10px;
-      padding: 10px 15px;
     }
     .video-card {
-      flex: 0 0 auto;
-      width: 250px;
-      background: #222;
-      border-radius: 8px;
+      min-width: 200px;
+      height: 120px;
+      background: #eee;
+      border-radius: 10px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
     }
-    .video-card img {
+
+    /* Long Videos */
+    .video-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 10px;
+    }
+    .long-video {
       width: 100%;
-      border-radius: 8px 8px 0 0;
+      height: 250px;
+      background: #ccc;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
     }
-    .video-title {
+
+    /* Shorts */
+    .shorts-grid {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
       padding: 10px;
-      font-size: 16px;
     }
-    .right-side {
+    .short-video {
+      min-width: 150px;
+      height: 280px;
+      background: #ddd;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* Stories */
+    #stories {
       position: fixed;
-      top: 100px;
       right: 10px;
-      width: 120px;
+      top: 100px;
+      width: 100px;
+      z-index: 999;
     }
-    .ad-box {
-      background: #333;
-      padding: 10px;
-      text-align: center;
+    .story-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .story {
+      width: 100%;
+      height: 100px;
+      background: pink;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Ads */
+    #ads {
+      position: fixed;
+      right: 10px;
+      bottom: 50px;
+      width: 100px;
+      z-index: 999;
+    }
+    .ad {
+      width: 100%;
+      height: 80px;
+      background: orange;
       margin-bottom: 10px;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .stories {
-      background: #222;
-      padding: 5px;
-      border-radius: 10px;
-    }
-    .story-icon {
-      width: 60px;
-      height: 60px;
-      background: #444;
-      border-radius: 50%;
-      margin: 5px auto;
+
+    /* Responsive fix */
+    @media (max-width: 768px) {
+      #stories, #ads {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>📺 TubeEarn - Explore Home</header>
+  <header>
+    <h1>Welcome to TubeEarn!</h1>
+    <p>This is the hub for trending videos, earnings summary, news and more.</p>
+  </header>
 
-<h2 class="section-title">🎥 Latest Movies</h2>
-<div class="video-row">
-  <div class="video-card">
-    <img src="https://placehold.co/250x150?text=Movie+1" />
-    <div class="video-title">Movie 1</div>
-  </div>
-  <div class="video-card">
-    <img src="https://placehold.co/250x150?text=Movie+2" />
-    <div class="video-title">Movie 2</div>
-  </div>
-  <!-- More movies -->
-</div>
+  <!-- Movies Section -->
+  <section id="movies">
+    <h2>🎬 Latest Movies</h2>
+    <div class="scroll-horizontal">
+      <div class="video-card">Movie 1</div>
+      <div class="video-card">Movie 2</div>
+      <div class="video-card">Movie 3</div>
+      <div class="video-card">Movie 4</div>
+    </div>
+  </section>
 
-<h2 class="section-title">🔥 Shorts</h2>
-<div class="video-row">
-  <div class="video-card">
-    <img src="https://placehold.co/250x150?text=Short+1" />
-    <div class="video-title">Short Video 1</div>
-  </div>
-  <div class="video-card">
-    <img src="https://placehold.co/250x150?text=Short+2" />
-    <div class="video-title">Short Video 2</div>
-  </div>
-  <!-- More shorts -->
-</div>
+  <!-- Long Videos Section -->
+  <section id="long-videos">
+    <h2>🔥 Trending Long Videos</h2>
+    <div class="video-list">
+      <div class="long-video">Long Video 1</div>
+      <div class="long-video">Long Video 2</div>
+    </div>
+  </section>
 
-<h2 class="section-title">🌟 Trending Now</h2>
-<div class="video-row">
-  <div class="video-card">
-    <img src="https://placehold.co/250x150?text=Trending+1" />
-    <div class="video-title">Trending Video</div>
-  </div>
-  <!-- More trending -->
-</div>
+  <!-- Shorts Section -->
+  <section id="shorts">
+    <h2>📱 Shorts</h2>
+    <div class="shorts-grid">
+      <div class="short-video">Short 1</div>
+      <div class="short-video">Short 2</div>
+      <div class="short-video">Short 3</div>
+      <div class="short-video">Short 4</div>
+    </div>
+  </section>
 
-<div class="right-side">
-  <div class="ad-box">Ad Here</div>
-  <div class="stories">
-    <div class="story-icon"></div>
-    <div class="story-icon"></div>
-    <div class="story-icon"></div>
-  </div>
-</div>
+  <!-- Right Side Stories -->
+  <aside id="stories">
+    <h3>📸 Stories</h3>
+    <div class="story-container">
+      <div class="story">Story 1</div>
+      <div class="story">Story 2</div>
+      <div class="story">Story 3</div>
+    </div>
+  </aside>
+
+  <!-- Right Side Ads -->
+  <aside id="ads">
+    <h3>📢 Ads</h3>
+    <div class="ad">Ad 1</div>
+    <div class="ad">Ad 2</div>
+  </aside>
 
 </body>
 </html>
