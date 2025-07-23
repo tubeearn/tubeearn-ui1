@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TubeEarn - Multi-System Platform</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+    header {
+      background-color: #123456;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #123456;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+      gap: 10px;
+    }
+    .nav-button {
+      background-color: #e0f7fa;
+      border: 2px solid #006064;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #004d40;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .nav-button:hover {
+      background-color: #b2ebf2;
+    }
+    .ad-banner {
+      background-color: #ffd700;
+      color: #000;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .story-section {
+      display: flex;
+      justify-content: start;
+      overflow-x: auto;
+      padding: 10px;
+      gap: 10px;
+      background-color: #fff;
+    }
+    .story {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #eee;
+      border: 3px solid #123456;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .video-box {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+    .video-box img {
+      width: 100%;
+      height: auto;
+    }
+    .video-box h4 {
+      padding: 10px;
+      margin: 0;
+    }
+    .monetization-info {
+      font-size: 13px;
+      padding: 0 10px 10px;
+      color: green;
+      text-align: left;
+    }
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff9800;
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+  <script>
+    function loadSection(sectionName) {
+      const content = document.getElementById("mainContent");
+      content.innerHTML = `<h2>Loading ${sectionName}...</h2><p>This section is under construction or coming soon!</p>`;
+    }
+
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById("apkPopup").style.display = "block";
+      }, 5000); // 5 seconds delay
+    }
+  </script>
+</head>
+<body>
+
+  <header>TubeEarn - World's Fastest Multi-Earning Platform</header>
+
+  <nav>
+    <div class="nav-button" onclick="loadSection('Home')">🏠 Home</div>
+    <div class="nav-button" onclick="loadSection('Create')">🆕 Create</div>
+    <div class="nav-button" onclick="loadSection('Shopping Mall')">🛒 Shopping</div>
+    <div class="nav-button" onclick="loadSection('Education')">🎓 Education</div>
+    <div class="nav-button" onclick="loadSection('Singing')">🎤 Singing</div>
+    <div class="nav-button" onclick="loadSection('Dating')">💘 Dating</div>
+    <div class="nav-button" onclick="loadSection('Video Editor')">🎬 Video Editor</div>
+    <div class="nav-button" onclick="loadSection('Audio Editor')">🎧 Audio Editor</div>
+    <div class="nav-button" onclick="loadSection('Marketplace')">🏪 Marketplace</div>
+    <div class="nav-button" onclick="loadSection('Face Swipe')">📲 Face Swipe</div>
+    <div class="nav-button" onclick="loadSection('Career')">👔 Career</div>
+    <div class="nav-button" onclick="loadSection('Upcoming')">🔔 Upcoming</div>
+    <div class="nav-button" onclick="loadSection('Subscription')">⭐ Subscription</div>
+    <div class="nav-button" onclick="loadSection('Account')">👤 Account</div>
+    <div class="nav-button" onclick="window.location.href='https://example.com/apk-download'">⬇️ Download APK</div>
+  </nav>
+
+  <div class="ad-banner">
+    🔥 Promote your video now and earn rewards! 🔥
+  </div>
+
+  <div class="story-section">
+    <div class="story" style="background-image: url('https://placehold.co/70x70?text=User1');"></div>
+    <div class="story" style="background-image: url('https://placehold.co/70x70?text=User2');"></div>
+    <div class="story" style="background-image: url('https://placehold.co/70x70?text=User3');"></div>
+    <div class="story" style="background-image: url('https://placehold.co/70x70?text=User4');"></div>
+  </div>
+
+  <div class="content" id="mainContent">
+    <h2>🔥 Trending Short Videos</h2>
+    <div class="video-grid">
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+1" alt="Short 1">
+        <h4>Comedy Shorts</h4>
+        <div class="monetization-info">Earned: ₹350 | Views: 45,000</div>
+      </div>
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+2" alt="Short 2">
+        <h4>Romantic Clips</h4>
+        <div class="monetization-info">Earned: ₹500 | Views: 60,000</div>
+      </div>
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+3" alt="Short 3">
+        <h4>Music Performance</h4>
+        <div class="monetization-info">Earned: ₹900 | Views: 1,00,000</div>
+      </div>
+      <div class="video-box">
+        <img src="https://placehold.co/300x170?text=Short+Video+4" alt="Short 4">
+        <h4>Education Tips</h4>
+        <div class="monetization-info">Earned: ₹120 | Views: 12,000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="apkPopup">
+    📲 Download TubeEarn App Now for Best Experience! <br />
+    <a href="https://example.com/apk-download" style="color: #fff; font-weight: bold; text-decoration: underline;">Click to Download APK</a>
+  </div>
+
+</body>
+</html>
