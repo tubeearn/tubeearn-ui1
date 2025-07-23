@@ -1,93 +1,134 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TubeEarn Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TubeEarn - World No.1 Earning Site</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background-color: #f5f5f5; }
     header {
-      background-color: #111;
-      color: white;
+      background-color: #e91e63;
+      color: #fff;
       padding: 10px;
       text-align: center;
-      font-size: 24px;
+      font-weight: bold;
+      font-size: 16px;
     }
-    .grid {
+    .nav-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
       gap: 10px;
-      padding: 20px;
+      padding: 10px;
+      background-color: #fff;
     }
-    .tile {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .nav-item {
+      background-color: #ffffff;
+      border: 2px solid #ddd;
+      border-radius: 12px;
       text-align: center;
-      padding: 15px;
-      transition: transform 0.2s;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    .tile:hover {
-      transform: scale(1.05);
+    .nav-item:hover {
+      background-color: #e0f7fa;
     }
-    .tile i {
-      font-size: 30px;
-      margin-bottom: 10px;
+    .nav-item i {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: #e91e63;
     }
-    .tile span {
+    .nav-item span {
       display: block;
+      font-size: 12px;
+    }
+    .videos-section {
+      padding: 15px;
+    }
+    .video-card {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .video-thumb {
+      width: 100%;
+      height: 180px;
+      background: #ccc;
+    }
+    .video-info {
+      padding: 10px;
+    }
+    .ad-banner {
+      margin: 20px 0;
+      background-color: #ffeb3b;
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
       font-weight: bold;
     }
-    .settings-icon {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 20px;
-      color: white;
-      cursor: pointer;
+    @media (max-width: 768px) {
+      .video-thumb { height: 150px; }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>  <header>
-    TubeEarn Dashboard
-    <i class="fas fa-cog settings-icon" title="Settings"></i>
-  </header>  <div class="grid">
-    <div class="tile"><i class="fas fa-video"></i><span>Long Video</span></div>
-    <div class="tile"><i class="fas fa-bolt"></i><span>Shorts</span></div>
-    <div class="tile"><i class="fas fa-gift"></i><span>Promote</span></div>
-    <div class="tile"><i class="fas fa-film"></i><span>Movies</span></div>
-    <div class="tile"><i class="fas fa-music"></i><span>Singing</span></div>
-    <div class="tile"><i class="fas fa-graduation-cap"></i><span>Education</span></div>
-    <div class="tile"><i class="fas fa-heart"></i><span>Dating</span></div>
-    <div class="tile"><i class="fas fa-photo-video"></i><span>Video Editor</span></div>
-    <div class="tile"><i class="fas fa-headphones"></i><span>Audio Editor</span></div>
-    <div class="tile"><i class="fas fa-briefcase"></i><span>Career</span></div>
-    <div class="tile"><i class="fas fa-store"></i><span>Marketplace</span></div>
-    <div class="tile"><i class="fas fa-user"></i><span>Account</span></div>
-    <div class="tile"><i class="fas fa-wallet"></i><span>Wallet</span></div>
-    <div class="tile"><i class="fas fa-bell"></i><span>Upcoming</span></div>
-    <div class="tile"><i class="fas fa-plus-circle"></i><span>Create</span></div>
-    <div class="tile"><i class="fas fa-swipe"></i><span>Face Swipe</span></div>
-    <div class="tile"><i class="fas fa-shopping-cart"></i><span>Shopping</span></div>
+<body>
+  <header>
+    Welcome to TubeEarn – World’s No.1 Interesting Earning Site – Fast & Growing
+  </header>  <div class="nav-grid">
+    <div class="nav-item" onclick="loadSection('shorts')">
+      <i class="fas fa-bolt"></i>
+      <span>Shorts</span>
+    </div>
+    <div class="nav-item" onclick="loadSection('long')">
+      <i class="fas fa-video"></i>
+      <span>Long</span>
+    </div>
+    <div class="nav-item" onclick="loadSection('story')">
+      <i class="fas fa-circle-play"></i>
+      <span>Story</span>
+    </div>
+    <div class="nav-item" onclick="loadSection('music')">
+      <i class="fas fa-music"></i>
+      <span>Music</span>
+    </div>
+    <div class="nav-item" onclick="loadSection('live')">
+      <i class="fas fa-broadcast-tower"></i>
+      <span>Live</span>
+    </div>
+    <div class="nav-item" onclick="loadSection('edu')">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Education</span>
+    </div>
+    <div class="nav-item" onclick="loadSection('wallet')">
+      <i class="fas fa-wallet"></i>
+      <span>Wallet</span>
+    </div>
+    <div class="nav-item" onclick="loadSection('setting')">
+      <i class="fas fa-cog"></i>
+      <span>Settings</span>
+    </div>
+  </div>  <div class="videos-section" id="videoContainer">
+    <!-- Sample videos -->
+    <div class="ad-banner">AD: Earn ₹500 Daily from TubeEarn Shorts!</div>
+    <div class="video-card">
+      <div class="video-thumb"></div>
+      <div class="video-info">Short Video #1</div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"></div>
+      <div class="video-info">Short Video #2</div>
+    </div>
+    <div class="ad-banner">AD: Join Monetization Program Now!</div>
+    <div class="video-card">
+      <div class="video-thumb"></div>
+      <div class="video-info">Short Video #3</div>
+    </div>
   </div>  <script>
-    // Ad trigger simulation (only frontend example)
-    let shortsWatched = 0;
-    function playShortVideo() {
-      shortsWatched++;
-      if (shortsWatched % 10 === 0) {
-        alert("Ad is playing (5s)...");
-      }
-    }
-
-    function playLongVideo() {
-      alert("5-second ad playing before the video...");
-      setTimeout(() => {
-        alert("Video starts now.");
-      }, 5000);
+    function loadSection(section) {
+      alert("Loading " + section + " section... (dynamic JS logic will go here)");
     }
   </script></body>
 </html>
