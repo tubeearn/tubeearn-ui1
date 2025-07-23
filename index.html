@@ -1,134 +1,86 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn - World No.1 Earning Site</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeEarn Dashboard</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background-color: #f5f5f5; }
-    header {
-      background-color: #e91e63;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 16px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f0f0;
     }
-    .nav-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-      gap: 10px;
+    header {
+      background: #222;
       padding: 10px;
-      background-color: #fff;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px;
     }
     .nav-item {
-      background-color: #ffffff;
-      border: 2px solid #ddd;
-      border-radius: 12px;
-      text-align: center;
-      padding: 10px;
+      background: #ddd;
+      color: #000;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
     .nav-item:hover {
-      background-color: #e0f7fa;
-    }
-    .nav-item i {
-      font-size: 20px;
-      margin-bottom: 5px;
-      color: #e91e63;
-    }
-    .nav-item span {
-      display: block;
-      font-size: 12px;
-    }
-    .videos-section {
-      padding: 15px;
-    }
-    .video-card {
-      background: #fff;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .video-thumb {
-      width: 100%;
-      height: 180px;
       background: #ccc;
     }
-    .video-info {
-      padding: 10px;
+    .material-icons {
+      font-size: 18px;
     }
-    .ad-banner {
-      margin: 20px 0;
-      background-color: #ffeb3b;
-      padding: 10px;
-      text-align: center;
+    .content {
+      padding: 20px;
+    }
+    .coming-soon {
+      background: #fff3cd;
+      padding: 15px;
+      border: 1px solid #ffeeba;
       border-radius: 8px;
-      font-weight: bold;
-    }
-    @media (max-width: 768px) {
-      .video-thumb { height: 150px; }
+      margin-top: 10px;
     }
   </style>
 </head>
-<body>
-  <header>
-    Welcome to TubeEarn – World’s No.1 Interesting Earning Site – Fast & Growing
-  </header>  <div class="nav-grid">
-    <div class="nav-item" onclick="loadSection('shorts')">
-      <i class="fas fa-bolt"></i>
-      <span>Shorts</span>
-    </div>
-    <div class="nav-item" onclick="loadSection('long')">
-      <i class="fas fa-video"></i>
-      <span>Long</span>
-    </div>
-    <div class="nav-item" onclick="loadSection('story')">
-      <i class="fas fa-circle-play"></i>
-      <span>Story</span>
-    </div>
-    <div class="nav-item" onclick="loadSection('music')">
-      <i class="fas fa-music"></i>
-      <span>Music</span>
-    </div>
-    <div class="nav-item" onclick="loadSection('live')">
-      <i class="fas fa-broadcast-tower"></i>
-      <span>Live</span>
-    </div>
-    <div class="nav-item" onclick="loadSection('edu')">
-      <i class="fas fa-graduation-cap"></i>
-      <span>Education</span>
-    </div>
-    <div class="nav-item" onclick="loadSection('wallet')">
-      <i class="fas fa-wallet"></i>
-      <span>Wallet</span>
-    </div>
-    <div class="nav-item" onclick="loadSection('setting')">
-      <i class="fas fa-cog"></i>
-      <span>Settings</span>
-    </div>
-  </div>  <div class="videos-section" id="videoContainer">
-    <!-- Sample videos -->
-    <div class="ad-banner">AD: Earn ₹500 Daily from TubeEarn Shorts!</div>
-    <div class="video-card">
-      <div class="video-thumb"></div>
-      <div class="video-info">Short Video #1</div>
-    </div>
-    <div class="video-card">
-      <div class="video-thumb"></div>
-      <div class="video-info">Short Video #2</div>
-    </div>
-    <div class="ad-banner">AD: Join Monetization Program Now!</div>
-    <div class="video-card">
-      <div class="video-thumb"></div>
-      <div class="video-info">Short Video #3</div>
-    </div>
-  </div>  <script>
-    function loadSection(section) {
-      alert("Loading " + section + " section... (dynamic JS logic will go here)");
-    }
-  </script></body>
+<body><header>
+  <h1>TubeEarn Dashboard</h1>
+  <span class="material-icons">settings</span>
+</header><nav>
+  <div class="nav-item" style="background:#F44336;"><span class="material-icons">home</span> Home</div>
+  <div class="nav-item" style="background:#4CAF50;"><span class="material-icons">upload</span> Upload</div>
+  <div class="nav-item" style="background:#2196F3;"><span class="material-icons">videocam</span> Live</div>
+  <div class="nav-item" style="background:#FF9800;"><span class="material-icons">auto_stories</span> Story</div>
+  <div class="nav-item" style="background:#673AB7;"><span class="material-icons">monetization_on</span> Monetization</div>
+  <div class="nav-item" style="background:#009688;"><span class="material-icons">account_balance_wallet</span> Wallet</div>
+  <div class="nav-item" style="background:#795548;"><span class="material-icons">movie</span> Shorts</div>
+  <div class="nav-item" style="background:#9C27B0;"><span class="material-icons">people</span> Dating</div>
+  <div class="nav-item" style="background:#3F51B5;"><span class="material-icons">work</span> Career</div>
+  <div class="nav-item" style="background:#E91E63;"><span class="material-icons">leaderboard</span> Algorithm</div>
+</nav><div class="content">
+  <h2>Coming Soon Features</h2>
+  <div class="coming-soon">TubeEarn AI Analytics Dashboard – launching soon!</div>
+  <div class="coming-soon">Story Upload Feature like Facebook/Instagram</div>
+  <div class="coming-soon">Advanced Dating Matchmaking System</div>
+  <div class="coming-soon">Teacher & Education Panel (Raj Education System)</div>
+  <div class="coming-soon">Singing + Live Performance Module</div>
+</div></body>
 </html>
