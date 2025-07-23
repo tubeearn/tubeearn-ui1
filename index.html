@@ -1,188 +1,137 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn</title>
+  <title>TubeEarn - India's No.1 Earning & Entertainment Platform</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
     }body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
 }
 
 header {
-  background-color: #fff;
-  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.logo {
-  font-size: 24px;
+header h1 {
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #e91e63;
+  color: #00f5ff;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar a {
+  margin: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #212121;
+  color: #00f5ff;
+  text-decoration: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.navbar a i {
+  margin-right: 8px;
 }
 
 .welcome {
-  background: #e91e63;
-  color: white;
   text-align: center;
-  padding: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  animation: scroll-left 10s linear infinite;
+  font-size: 1.6rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-@keyframes scroll-left {
-  0% {transform: translateX(100%);}
-  100% {transform: translateX(-100%);}
-}
-
-nav {
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.content {
+  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
+  gap: 1rem;
 }
 
-nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  text-decoration: none;
-  color: #444;
-  font-size: 13px;
-  border: 1px solid #ddd;
+.video-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
   border-radius: 10px;
-  width: 80px;
+  width: 280px;
 }
 
-nav a i {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-nav a:hover {
-  background-color: #f1f1f1;
-  color: #e91e63;
-}
-
-.stories {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  overflow-x: auto;
-  background-color: #fff;
-  margin-top: 10px;
-}
-
-.story {
-  flex: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid #e91e63;
-  background-color: #eee;
-}
-
-.video-feed {
-  padding: 10px;
-}
-
-.video-card {
-  background: white;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-
-.bottom-nav {
+.bottom-bar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: white;
+  background: #000;
+  padding: 0.6rem;
   display: flex;
   justify-content: space-around;
-  padding: 10px;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-
-.bottom-nav a {
-  text-decoration: none;
-  color: #555;
-  font-size: 18px;
-}
-
-.popup {
-  position: fixed;
-  bottom: 60px;
-  left: 10px;
-  right: 10px;
-  background-color: #ff9800;
+  align-items: center;
   color: white;
-  padding: 10px;
-  border-radius: 10px;
-  display: none;
+}
+
+.bottom-bar i {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
 }
 
   </style>
-</head>
-<body>  <div class="welcome">
-    Welcome to TubeEarn — The World’s Best Earning and Entertainment Platform of the Future!
-  </div>  <header>
-    <div class="logo">
-      <i class="fas fa-video"></i> TubeEarn
+</head><body>
+  <header>
+    <h1><i class="fa fa-play-circle"></i> TubeEarn</h1>
+    <div class="welcome">Welcome to TubeEarn - World's Fastest Growing Future for Creators & Enjoyment Platform</div>
+  </header>  <nav class="navbar">
+    <a href="#"><i class="fa fa-home"></i> Home</a>
+    <a href="#"><i class="fa fa-video"></i> Shorts</a>
+    <a href="#"><i class="fa fa-tv"></i> Long Videos</a>
+    <a href="#"><i class="fa fa-user"></i> Dating</a>
+    <a href="#"><i class="fa fa-store"></i> Marketplace</a>
+    <a href="#"><i class="fa fa-music"></i> Singing</a>
+    <a href="#"><i class="fa fa-random"></i> Swipe Videos</a>
+    <a href="#"><i class="fa fa-scissors"></i> Video Editor</a>
+    <a href="#"><i class="fa fa-microphone"></i> Audio Editor</a>
+    <a href="#"><i class="fa fa-volume-mute"></i> Vocal Remover</a>
+    <a href="#"><i class="fa fa-magic"></i> Object Remover</a>
+    <a href="#"><i class="fa fa-hourglass-half"></i> Upcoming Features</a>
+    <a href="#"><i class="fa fa-wallet"></i> Wallet</a>
+  </nav>  <div class="content">
+    <div class="video-box">
+      <h3>Suggested Video</h3>
+      <video src="sample.mp4" controls width="100%"></video>
     </div>
-  </header>  <nav>
-    <a href="#"><i class="fas fa-home"></i> Home</a>
-    <a href="#"><i class="fas fa-fire"></i> Trending</a>
-    <a href="#"><i class="fas fa-camera"></i> Creator</a>
-    <a href="#"><i class="fas fa-store"></i> Shopping</a>
-    <a href="#"><i class="fas fa-heart"></i> Dating</a>
-    <a href="#"><i class="fas fa-play"></i> Shorts</a>
-    <a href="#"><i class="fas fa-chalkboard-teacher"></i> Education</a>
-    <a href="#"><i class="fas fa-briefcase"></i> Career</a>
-    <a href="#"><i class="fas fa-user"></i> Account</a>
-  </nav>  <div class="stories">
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-  </div>  <div class="video-feed">
-    <div class="video-card">Video 1</div>
-    <div class="video-card">Video 2</div>
-    <div class="video-card">Video 3</div>
-  </div>  <div class="bottom-nav">
-    <a href="#"><i class="fas fa-home"></i></a>
-    <a href="#"><i class="fas fa-bolt"></i></a>
-    <a href="#"><i class="fas fa-bell"></i></a>
-    <a href="#"><i class="fas fa-user"></i></a>
-    <a href="#"><i class="fas fa-star"></i></a>
-  </div>  <div class="popup" id="apkPopup">
-    Download TubeEarn App Now! <button onclick="closePopup()">×</button>
-  </div>  <script>
-    let shown = false;
-    if (!localStorage.getItem("apkShown")) {
-      setTimeout(() => {
-        document.getElementById("apkPopup").style.display = "block";
-      }, 4000);
-    }
-    function closePopup() {
-      document.getElementById("apkPopup").style.display = "none";
-      localStorage.setItem("apkShown", true);
-    }
-  </script></body>
-</html>
+    <div class="video-box">
+      <h3>Entertainment</h3>
+      <video src="fun.mp4" controls width="100%"></video>
+    </div>
+  </div>  <div class="bottom-bar">
+    <i class="fa fa-home"></i>
+    <i class="fa fa-search"></i>
+    <i class="fa fa-plus-circle"></i>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-user-circle"></i>
+  </div>
+</body></html>
