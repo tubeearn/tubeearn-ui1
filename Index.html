@@ -1,112 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+// ✅ TubeEarn Main App UI with Upgrades (as per user instructions)
+
+// ✅ HTML Structure with Top Navigation, Video Feed, Settings, and Login Prompt
+
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TubeEarn UI</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-    }
-    header {
-      background-color: #1d3557;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    nav {
-      background-color: #457b9d;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav button {
-      background-color: #a8dadc;
-      border: none;
-      margin: 10px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    nav button:hover {
-      background-color: #f1faee;
-    }
-    .section {
-      display: none;
-      padding: 20px;
-      background-color: #fff;
-    }
-    .active {
-      display: block;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TubeEarn</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
-<body>
-  <header>
-    <h1>TubeEarn - World's Fastest Multi-System Platform</h1>
-  </header>
-  <nav>
-    <button onclick="showSection('home')">🏠 Home</button>
-    <button onclick="showSection('create')">🎬 Create</button>
-    <button onclick="showSection('shopping')">🛒 Shopping Mall</button>
-    <button onclick="showSection('education')">📚 Education</button>
-    <button onclick="showSection('singing')">🎤 Singing</button>
-    <button onclick="showSection('dating')">💘 Dating</button>
-    <button onclick="showSection('videoeditor')">🎞️ Video Editor</button>
-    <button onclick="showSection('audioeditor')">🎧 Audio Editor</button>
-  </nav>
+<body>  <!-- ✅ Header with Logo and Navigation -->  <header>
+    <div class="logo">TubeEarn</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Create</a>
+      <a href="#">Shopping</a>
+      <a href="#">Education</a>
+      <a href="#">Singing</a>
+      <a href="#">Dating</a>
+    </nav>
+    <div class="icons">
+      <button id="settingsBtn">⚙️</button>
+    </div>
+  </header>  <!-- ✅ Settings Popup -->  <div id="settingsPopup" class="modal hidden">
+    <h2>Settings</h2>
+    <label><input type="checkbox" id="darkModeToggle" /> Dark Mode</label>
+    <label>Video Quality:
+      <select>
+        <option>Auto</option>
+        <option>144p</option>
+        <option>360p</option>
+        <option>720p</option>
+        <option>1080p</option>
+      </select>
+    </label>
+    <label>Language:
+      <select>
+        <option>English</option>
+        <option>Hindi</option>
+      </select>
+    </label>
+    <button onclick="closeSettings()">Close</button>
+  </div>  <!-- ✅ Login Prompt Popup -->  <div id="loginPopup" class="modal hidden">
+    <h2>Please Login to continue</h2>
+    <button onclick="loginNow()">Login</button>
+    <button onclick="closeLogin()">Cancel</button>
+  </div>  <!-- ✅ Video Feed -->  <main>
+    <aside>
+      <ul>
+        <li>🔥 Trending</li>
+        <li>🎤 Singing</li>
+        <li>🎓 Education</li>
+        <li>🛍️ Shopping</li>
+      </ul>
+    </aside>
+    <section class="videos">
+      <div class="video-card">
+        <video src="sample.mp4" controls></video>
+        <div class="video-info">
+          <h3>Sample Video Title</h3>
+          <button onclick="requireLogin()">Like</button>
+          <button onclick="requireLogin()">Comment</button>
+        </div>
+      </div>
+      <!-- More videos -->
+    </section>
+  </main>  <!-- ✅ APK Download Prompt -->  <div class="apk-banner">
+    📱 Download TubeEarn App for better experience
+    <a href="/apk/tubeearn.apk" download>Download APK</a>
+  </div>  <!-- ✅ Story Feature Section -->  <section class="stories">
+    <h3>Featured Stories</h3>
+    <div class="story-slider">
+      <div class="story">Story 1</div>
+      <div class="story">Story 2</div>
+      <div class="story">Story 3</div>
+    </div>
+  </section></body>
+</html>/* ✅ styles.css */ body { font-family: sans-serif; background: #fff; color: #000; } header { display: flex; justify-content: space-between; padding: 1rem; background: #f0f0f0; } .logo { font-size: 1.5rem; font-weight: bold; } nav a { margin: 0 0.5rem; text-decoration: none; } .modal { position: fixed; top: 30%; left: 50%; transform: translate(-50%, -50%); background: #eee; padding: 2rem; border: 1px solid #ccc; z-index: 1000; } .hidden { display: none; } .videos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1rem; } .video-card video { width: 100%; height: auto; } .apk-banner { background: #222; color: #fff; padding: 1rem; text-align: center; } .story-slider { display: flex; overflow-x: scroll; gap: 1rem; padding: 1rem; } .story { background: #ccc; padding: 1rem; border-radius: 10px; min-width: 100px; text-align: center; }
 
-  <div id="home" class="section active">
-    <h2>Welcome to TubeEarn!</h2>
-    <p>This is the hub for trending videos, earnings summary, news and more. Click any tab above to explore.</p>
-  </div>
+/* ✅ script.js */ function requireLogin() { document.getElementById('loginPopup').classList.remove('hidden'); } function closeLogin() { document.getElementById('loginPopup').classList.add('hidden'); } function loginNow() { alert('Redirecting to login page...'); }
 
-  <div id="create" class="section">
-    <h2>Create Account (TubeEarn Creator)</h2>
-    <p>Platform: TubeEarn Dating, Singing, Education & More</p>
-    <p>Click below to start your creator journey:</p>
-    <button onclick="alert('Creator Account Created')">Create Creator Account</button>
-  </div>
+document.getElementById('settingsBtn').addEventListener('click', () => { document.getElementById('settingsPopup').classList.remove('hidden'); }); function closeSettings() { document.getElementById('settingsPopup').classList.add('hidden'); }
 
-  <div id="shopping" class="section">
-    <h2>TubeEarn Shopping Mall</h2>
-    <p>Upcoming eCommerce feature. Buy & Sell directly!</p>
-  </div>
+// Dark mode toggle const darkToggle = document.getElementById('darkModeToggle'); darkToggle?.addEventListener('change', () => { if (darkToggle.checked) { document.body.style.background = '#111'; document.body.style.color = '#fff'; } else { document.body.style.background = '#fff'; document.body.style.color = '#000'; } });
 
-  <div id="education" class="section">
-    <h2>Raj Education System</h2>
-    <p>AI-Powered Online Education Platform for All Countries.</p>
-  </div>
-
-  <div id="singing" class="section">
-    <h2>Singing Feature</h2>
-    <p>Upload your singing videos, collaborate, use music library & more.</p>
-  </div>
-
-  <div id="dating" class="section">
-    <h2>TubeEarn Dating</h2>
-    <p>Meet people, go live, send gifts, and more. Subscription required.</p>
-  </div>
-
-  <div id="videoeditor" class="section">
-    <h2>Video Editor</h2>
-    <p>Coming Soon: Edit and publish your videos with powerful tools.</p>
-  </div>
-
-  <div id="audioeditor" class="section">
-    <h2>Audio Editor</h2>
-    <p>Coming Soon: Trim, remix, and enhance your audio files directly in browser.</p>
-  </div>
-
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-    }
-  </script>
-</body>
-</html>
