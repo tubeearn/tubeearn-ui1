@@ -1,70 +1,146 @@
-// TubeEarn Full UI (Frontend) - YouTube Style Responsive Layout // Tech Stack: React + Tailwind CSS
-
-import React from "react"; import { FaHome, FaVideo, FaUpload, FaUserCircle, FaSearch, FaBell, FaBars } from "react-icons/fa";
-
-export default function TubeEarnApp() { return ( <div className="min-h-screen bg-gray-100"> {/* Top Navigation */} <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md sticky top-0 z-50"> <div className="flex items-center gap-2"> <FaBars className="text-xl" /> <span className="text-xl font-bold text-red-600">TubeEarn</span> </div> <div className="flex-1 max-w-md mx-4"> <div className="flex items-center border rounded-full px-2 py-1"> <input
-type="text"
-placeholder="Search..."
-className="flex-1 outline-none px-2 py-1"
-/> <FaSearch className="text-gray-600" /> </div> </div> <div className="flex items-center gap-4 text-xl"> <FaBell /> <FaUserCircle /> </div> </div>
-
-{/* Main Content */}
-  <div className="flex">
-    {/* Sidebar (Collapsible Future) */}
-    <div className="hidden md:block w-60 bg-white border-r p-4 space-y-3">
-      <button className="w-full text-left">🎥 Creator Zone</button>
-      <button className="w-full text-left">Upload Video</button>
-      <button className="w-full text-left">Upload Shorts</button>
-      <button className="w-full text-left">Live Stream</button>
-      <button className="w-full text-left">Monetization</button>
-      <hr />
-      <button className="w-full text-left">💘 Dating Section</button>
-      <button className="w-full text-left">Match</button>
-      <button className="w-full text-left">Video Chat</button>
-      <button className="w-full text-left">Like & Follow</button>
-      <hr />
-      <button className="w-full text-left">🛒 Shopping Mall</button>
-      <button className="w-full text-left">Buyer Account</button>
-      <button className="w-full text-left">Seller Login</button>
-      <button className="w-full text-left">Products</button>
-      <hr />
-      <button className="w-full text-left">🎬 Video Editors</button>
-      <button className="w-full text-left">Photo to Video</button>
-      <button className="w-full text-left">Video to Video</button>
-      <button className="w-full text-left">Face Camera Effects</button>
-      <hr />
-      <button className="w-full text-left">🎵 Audio Editor</button>
-      <button className="w-full text-left">🕹️ Gaming Zone (Coming Soon)</button>
-      <button className="w-full text-left">📚 Education System</button>
-      <button className="w-full text-left">💼 Career</button>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TubeEarn Dashboard</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f0f2f5;
+    }
+    aside {
+      width: 240px;
+      background-color: #1c1c1c;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      overflow-y: auto;
+      position: fixed;
+    }
+    aside h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #00c3ff;
+    }
+    aside ul {
+      list-style: none;
+    }
+    aside ul li {
+      padding: 12px 15px;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+    }
+    aside ul li:hover {
+      background-color: #333;
+    }
+    aside ul li i {
+      margin-right: 10px;
+    }
+    main {
+      margin-left: 240px;
+      flex: 1;
+      padding: 30px;
+    }
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #00c3ff;
+    }
+    header nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #555;
+    }
+    .content {
+      margin-top: 20px;
+    }
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <h2>📺 TubeEarn</h2>
+    <ul>
+      <li><i class="material-icons">videocam</i> Creator Zone</li>
+      <li style="padding-left:30px">Upload Video</li>
+      <li style="padding-left:30px">Upload Shorts</li>
+      <li style="padding-left:30px">Live Stream</li>
+      <li style="padding-left:30px">Monetization</li>
+      <li><i class="material-icons">favorite</i> Dating Section</li>
+      <li style="padding-left:30px">Match</li>
+      <li style="padding-left:30px">Video Chat</li>
+      <li style="padding-left:30px">Like & Follow</li>
+      <li><i class="material-icons">shopping_cart</i> Shopping Mall</li>
+      <li style="padding-left:30px">Buyer Account</li>
+      <li style="padding-left:30px">Seller Login</li>
+      <li style="padding-left:30px">Products</li>
+      <li><i class="material-icons">video_call</i> Video Editors</li>
+      <li style="padding-left:30px">Photo to Video</li>
+      <li style="padding-left:30px">Video to Video</li>
+      <li style="padding-left:30px">Face Camera Effects</li>
+      <li><i class="material-icons">music_note</i> Audio Editor</li>
+      <li><i class="material-icons">sports_esports</i> Gaming Zone (Coming Soon)</li>
+      <li><i class="material-icons">school</i> Education System</li>
+      <li><i class="material-icons">work</i> Career</li>
+    </ul>
+  </aside>
+  <main>
+    <header>
+      <div class="logo">TubeEarn</div>
+      <nav>
+        <a href="#">Login</a>
+        <a href="#">Signup</a>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="box">
+        <h3 class="section-title">Welcome to TubeEarn</h3>
+        <p>This is your all-in-one earning platform. Click any section from the left menu to get started.</p>
+      </div>
+      <div class="box">
+        <h3 class="section-title">Live Features</h3>
+        <p>Live streaming, shorts, monetization stats and more – coming soon with real-time updates.</p>
+      </div>
     </div>
-
-    {/* Video Feed */}
-    <div className="flex-1 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {/* Placeholder Video Cards */}
-      {[...Array(12)].map((_, idx) => (
-        <div
-          key={idx}
-          className="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg cursor-pointer"
-        >
-          <div className="h-40 bg-gray-300" />
-          <div className="p-3">
-            <h3 className="font-semibold text-sm">Sample Video Title {idx + 1}</h3>
-            <p className="text-xs text-gray-500">Uploaded by User{idx + 1}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  {/* Bottom Navigation for Mobile */}
-  <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around p-2 text-xl">
-    <FaHome />
-    <FaVideo />
-    <FaUpload />
-    <FaUserCircle />
-  </div>
-</div>
-
-); }
-
+    <footer>
+      &copy; 2025 TubeEarn. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>
