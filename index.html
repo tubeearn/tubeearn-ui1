@@ -1,80 +1,55 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>TubeEarn</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-    nav {
-      background-color: #87CEEB;
-      padding: 1em;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: red;
-      font-weight: bold;
-    }
-    .section {
-      padding: 20px;
-    }
-    .section h2 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
-    }
-    .card {
-      background: #fff;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Shorts</a>
-    <a href="#">Videos</a>
-    <a href="#">Profile</a>
-  </nav>  <div class="section">
-    <h2>Short Videos</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://via.placeholder.com/150x250" alt="Short 1" />
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="logo">TubeEarn</div>
+    <div class="top-icons">
+      <button onclick="search()">🔍</button>
+      <button onclick="notify()">🔔</button>
+      <button onclick="profile()">👤</button>
+    </div>
+  </header>
+
+  <!-- Shorts Section -->
+  <main class="shorts-section">
+    <h2>🔥 Trending Shorts</h2>
+    <div class="shorts-grid">
+      <div class="short-card">
+        <img src="https://via.placeholder.com/150x250" alt="Short 1">
+        <div class="short-info">
+          <img src="https://via.placeholder.com/40" class="avatar" />
+          <div class="user-name">@User123</div>
+        </div>
+        <p>Cool Dance Video</p>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150x250" alt="Short 2" />
+      <div class="short-card">
+        <img src="https://via.placeholder.com/150x250" alt="Short 2">
+        <div class="short-info">
+          <img src="https://via.placeholder.com/40" class="avatar" />
+          <div class="user-name">@SingerX</div>
+        </div>
+        <p>Romantic Song 🎤</p>
       </div>
     </div>
-  </div>  <div class="section">
-    <h2>All Videos</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://via.placeholder.com/320x180" alt="Video 1" />
-        <p>Video Title 1</p>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/320x180" alt="Video 2" />
-        <p>Video Title 2</p>
-      </div>
-    </div>
-  </div>
+  </main>
+
+  <!-- Bottom Mobile Navigation -->
+  <nav class="bottom-nav">
+    <button onclick="navigate('home')">🏠<br>Home</button>
+    <button onclick="navigate('shorts')">🎞️<br>Shorts</button>
+    <button onclick="navigate('upload')">➕<br>Upload</button>
+    <button onclick="navigate('earn')">💰<br>Earn</button>
+    <button onclick="navigate('profile')">👤<br>Profile</button>
+  </nav>
+
+  <script src="script.js"></script>
 </body>
 </html>
