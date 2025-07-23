@@ -7,142 +7,144 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f9f9f9;
+    }
+    .top-bar {
+      background-color: #222;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
     }
     header {
       background-color: #fff;
-      border-bottom: 2px solid #ccc;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       padding: 10px;
-    }
-    .top-header {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .logo {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
-      color: #e74c3c;
+      color: red;
+      margin-bottom: 5px;
     }
     nav {
-      display: grid;
-      grid-template-columns: repeat(6, auto);
-      gap: 10px;
-      margin-top: 10px;
-    }
-    nav a {
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      background: #ffcccc;
-      color: #000;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background-color: #ff9999;
-      color: white;
-    }
-    .marquee {
-      width: 100%;
-      background: #ffe;
-      color: #333;
-      padding: 5px;
-      font-size: 14px;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .marquee span {
-      display: inline-block;
-      animation: marquee 15s linear infinite;
-    }
-    @keyframes marquee {
-      from { transform: translateX(100%); }
-      to { transform: translateX(-100%); }
-    }
-    .story-section {
-      background: #fff;
-      padding: 10px;
-      border-top: 2px solid #ddd;
       display: flex;
-      overflow-x: scroll;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    .story {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: #ccc;
-      margin-right: 10px;
+    nav button {
+      background-color: #f2f2f2;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
     }
-    .video-feed {
+    nav button:hover {
+      background-color: #ddd;
+    }
+    .story-section, .random-videos {
+      margin: 15px;
       padding: 10px;
-    }
-    .video-box {
-      background: #fff;
-      padding: 10px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: #fff;
-      border-top: 1px solid #ccc;
+      background-color: #fff;
       display: flex;
       justify-content: space-around;
-      padding: 8px 0;
+      padding: 10px;
+      border-top: 1px solid #ccc;
     }
-    .bottom-nav a {
-      text-decoration: none;
-      font-size: 12px;
-      color: #000;
+    .popup {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+      z-index: 9999;
+      border-radius: 10px;
+      display: none;
+    }
+    .popup button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="top-header">
-      <div class="logo">TubeEarn</div>
-    </div>
-    <div class="marquee">
-      <span>Welcome to TubeEarn — World's Best Earning Platform with Multiple Entertainment and Future Opportunities!</span>
-    </div>
-    <nav>
-      <a href="#">TubeEarn Creator</a>
-      <a href="#">TubeEarn Dating</a>
-      <a href="#">TubeEarn Education</a>
-      <a href="#">TubeEarn Singing</a>
-      <a href="#">TubeEarn Marketplace</a>
-      <a href="#">TubeEarn Mall</a>
-      <a href="#">Video Editor</a>
-      <a href="#">Audio Editor</a>
-      <a href="#">Face Swipe</a>
-      <a href="#">Upcoming Features</a>
-      <a href="#">Games</a>
-      <a href="#">Career</a>
-    </nav>
-  </header>  <section class="story-section">
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-  </section>  <section class="video-feed">
-    <div class="video-box">Random Video 1</div>
-    <div class="video-box">Random Video 2</div>
-    <div class="video-box">Random Video 3</div>
-  </section>  <div class="bottom-nav">
-    <a href="#">Home</a>
-    <a href="#">Shorts</a>
-    <a href="#">Upload</a>
-    <a href="#">Wallet</a>
-    <a href="#">Profile</a>
+  <div class="top-bar">
+    Welcome to TubeEarn – The world’s most powerful earning & multi-enjoyment platform
   </div>
-</body>
+  <header>
+    <div class="logo">TubeEarn</div>
+    <nav>
+      <button onclick="navigate('creator')">TubeEarn Creator</button>
+      <button onclick="navigate('dating')">TubeEarn Dating ❤️</button>
+      <button onclick="navigate('education')">TubeEarn Education</button>
+      <button onclick="navigate('singing')">TubeEarn Singing</button>
+      <button onclick="navigate('market')">TubeEarn Marketplace</button>
+      <button onclick="navigate('shop')">TubeEarn Shopping Mall</button>
+      <button onclick="navigate('video-editor')">TubeEarn Video Editor</button>
+      <button onclick="navigate('audio-editor')">TubeEarn Audio Editor</button>
+      <button onclick="navigate('swipe')">TubeEarn Face Swipe</button>
+      <button onclick="navigate('upcoming')">Upcoming Feature</button>
+      <button onclick="navigate('games')">Games 🎮</button>
+      <button onclick="navigate('career')">Career</button>
+    </nav>
+  </header>  <div class="story-section">
+    <h3>Stories (Insta Style)</h3>
+    <p>Display recent stories here...</p>
+  </div>  <div class="random-videos">
+    <h3>Random Videos</h3>
+    <video width="100%" height="auto" controls autoplay>
+      <source src="sample-ad.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>Scroll through content. Short/Long Videos. Music. Love. Fun.</p>
+  </div>  <div class="bottom-nav">
+    <button onclick="navigate('home')">🏠 Home</button>
+    <button onclick="navigate('shorts')">🎬 Shorts</button>
+    <button onclick="navigate('upload')">📤 Upload</button>
+    <button onclick="navigate('profile')">👤 Profile</button>
+  </div>  <div class="popup" id="apkPopup">
+    <p>Download TubeEarn APK for better experience!</p>
+    <button onclick="downloadApk()">Download</button>
+    <button onclick="closePopup()">Maybe Later</button>
+  </div>  <script>
+    function navigate(section) {
+      alert("Navigate to: " + section);
+    }
+
+    function downloadApk() {
+      alert("Downloading APK...");
+      localStorage.setItem("apkDownloaded", "true");
+      closePopup();
+    }
+
+    function closePopup() {
+      document.getElementById("apkPopup").style.display = "none";
+    }
+
+    window.onload = function() {
+      if (!localStorage.getItem("apkDownloaded")) {
+        document.getElementById("apkPopup").style.display = "block";
+      }
+    }
+  </script></body>
 </html>
