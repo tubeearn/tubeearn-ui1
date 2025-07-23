@@ -1,149 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TubeEarn - Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TubeEarn - World's Fastest Multi-System Platform</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      scroll-behavior: smooth;
-      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
     }
 
-    header {
-      background: #ff004f;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background: #fff;
+    /* Top Navigation Bar */
+    .navbar {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #ff004f;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 20px;
-    }
-
-    h2 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .scroll-horizontal {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-    }
-
-    .video-card, .short-video, .long-video, .story {
-      min-width: 200px;
-      height: 120px;
-      background: #ddd;
-      border-radius: 10px;
-      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
-      font-weight: bold;
+      justify-content: space-around;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
     }
 
-    .shorts-grid {
+    .navbar span {
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    /* Movies Section */
+    .section-title {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .movie-container {
       display: flex;
       overflow-x: auto;
-      gap: 10px;
+      padding: 10px 0;
     }
 
-    .long-video {
-      height: 200px;
+    .movie {
+      min-width: 160px;
+      margin-right: 10px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .movie img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    /* Shorts */
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .short {
+      background: #fff;
+      padding: 5px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .short img {
+      width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    /* Story Sidebar */
+    .story-sidebar {
+      position: fixed;
+      right: 10px;
+      top: 80px;
+      width: 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .story {
-      min-width: 100px;
-      height: 100px;
-      background: pink;
+      width: 80px;
+      height: 140px;
+      background-color: #ddd;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
     }
 
-    .ad {
-      width: 100%;
-      height: 80px;
-      background: orange;
+    /* Ads */
+    .ads {
+      margin-top: 30px;
+      padding: 10px;
+      background: #ffc107;
+      text-align: center;
+      font-weight: bold;
       border-radius: 10px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .story-sidebar {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>TubeEarn</h1>
-    <p>Earn with your content: Movies, Shorts, Long Videos & more!</p>
-  </header>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    🏠 Home 🎬 Create 🛒 Shopping Mall 📚 Education 🎤 Singing 💘 Dating 🎞️ Video Editor 🎧 Audio Editor 🛍️ Marketplace 😊 Face Swipe 💼 Career 🔔 Upcoming 👤 Account 💰 Wallet
+  </div>
 
-  <nav>
-    <a href="#movies">Movies</a>
-    <a href="#shorts">Shorts</a>
-    <a href="#longvideos">Long Videos</a>
-    <a href="#stories">Stories</a>
-  </nav>
+  <!-- CONTENT -->
+  <div class="content">
 
-  <section id="movies">
-    <h2>🎬 Movies</h2>
-    <div class="scroll-horizontal">
-      <div class="video-card">Movie 1</div>
-      <div class="video-card">Movie 2</div>
-      <div class="video-card">Movie 3</div>
+    <h2>Welcome to TubeEarn!</h2>
+    <p>This is the hub for trending videos, earnings summary, news and more. Click any tab above to explore.</p>
+
+    <!-- Movies Section -->
+    <div class="section-title">🎥 Trending Movies</div>
+    <div class="movie-container">
+      <div class="movie"><img src="https://placehold.co/160x100?text=Movie+1" /></div>
+      <div class="movie"><img src="https://placehold.co/160x100?text=Movie+2" /></div>
+      <div class="movie"><img src="https://placehold.co/160x100?text=Movie+3" /></div>
+      <div class="movie"><img src="https://placehold.co/160x100?text=Movie+4" /></div>
     </div>
-  </section>
 
-  <section id="shorts">
-    <h2>📱 Shorts</h2>
+    <!-- Shorts Section -->
+    <div class="section-title">📱 Short Videos</div>
     <div class="shorts-grid">
-      <div class="short-video">Short 1</div>
-      <div class="short-video">Short 2</div>
-      <div class="short-video">Short 3</div>
+      <div class="short"><img src="https://placehold.co/130x180?text=Short+1" /></div>
+      <div class="short"><img src="https://placehold.co/130x180?text=Short+2" /></div>
+      <div class="short"><img src="https://placehold.co/130x180?text=Short+3" /></div>
+      <div class="short"><img src="https://placehold.co/130x180?text=Short+4" /></div>
     </div>
-  </section>
 
-  <section id="longvideos">
-    <h2>🔥 Long Videos</h2>
-    <div class="scroll-horizontal">
-      <div class="long-video">Long Video 1</div>
-      <div class="long-video">Long Video 2</div>
-    </div>
-  </section>
+    <!-- Ads Section -->
+    <div class="ads">🌟 Sponsored Ad: Your product here!</div>
 
-  <section id="stories">
-    <h2>📸 Stories</h2>
-    <div class="scroll-horizontal">
-      <div class="story">Story 1</div>
-      <div class="story">Story 2</div>
-      <div class="story">Story 3</div>
-    </div>
-  </section>
+  </div>
 
-  <section id="ads">
-    <h2>📢 Sponsored Ads</h2>
-    <div class="ad">Ad 1</div>
-    <div class="ad">Ad 2</div>
-  </section>
+  <!-- Stories Sidebar -->
+  <div class="story-sidebar">
+    <div class="story" style="background-image: url('https://placehold.co/80x140?text=Story+1');"></div>
+    <div class="story" style="background-image: url('https://placehold.co/80x140?text=Story+2');"></div>
+    <div class="story" style="background-image: url('https://placehold.co/80x140?text=Story+3');"></div>
+  </div>
 
 </body>
 </html>
