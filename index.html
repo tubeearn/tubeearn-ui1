@@ -2,116 +2,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TubeEarn - India's #1 Video Platform</title>
+  <title>TubeEarn - India’s No.1 Earning & Fun Platform</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1600&q=80') no-repeat center center fixed;
       background-size: cover;
       color: white;
-    }header {
-  background: rgba(0,0,0,0.6);
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  text-align: center;
-}
-
-header h1 {
-  width: 100%;
-  font-size: 1.5rem;
-}
-
-.nav-item {
-  margin: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.videos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-}
-
-.video-card {
-  background: rgba(0,0,0,0.5);
-  margin: 10px;
-  padding: 10px;
-  width: 300px;
-  border-radius: 10px;
-}
-
-.video-card video {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-around;
-  background: black;
-  padding: 8px 0;
-  color: white;
-}
-
-.bottom-bar div {
-  text-align: center;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-}
-
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 24px;
+      color: #00ffe7;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: rgba(0,0,0,0.6);
+    }
+    nav a {
+      flex: 1 1 80px;
+      text-align: center;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .content {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .card h3 { color: #00ffd9; }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    .bottom-nav a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      .bottom-nav {
+        flex-direction: row;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to TubeEarn - India's #1 Earning Platform</h1>
-    <div class="nav-item">🎥 Home</div>
-    <div class="nav-item">📸 Shorts</div>
-    <div class="nav-item">💰 Wallet</div>
-    <div class="nav-item">🛒 Marketplace</div>
-    <div class="nav-item">🎤 Singing</div>
-    <div class="nav-item">📹 Video Editor</div>
-    <div class="nav-item">🎧 Audio Editor</div>
-    <div class="nav-item">🧼 Vocal Removal</div>
-    <div class="nav-item">🧽 Object Removal</div>
-    <div class="nav-item">🚀 Upcoming</div>
-  </header>  <div class="videos-container">
-    <div class="video-card">
-      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-      <p>Sample Video 1</p>
+    <h1>Welcome to TubeEarn — India’s No.1 Earning and Multiple Fun Platform</h1>
+  </header>  <nav>
+    <a href="#">🎥 Creator</a>
+    <a href="#">🛒 Shopping</a>
+    <a href="#">🎙 Singing</a>
+    <a href="#">📽 Swipe Video</a>
+    <a href="#">🎬 Video Editor</a>
+    <a href="#">🎧 Audio Editor</a>
+    <a href="#">🔊 Vocal Remove</a>
+    <a href="#">🧽 Object Removal</a>
+    <a href="#">🚀 Upcoming</a>
+    <a href="#">💰 Wallet</a>
+  </nav>  <div class="content">
+    <div class="card">
+      <h3>🔥 Trending Shorts</h3>
+      <p>Watch latest viral content.</p>
     </div>
-    <div class="video-card">
-      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-      <p>Sample Video 2</p>
+    <div class="card">
+      <h3>🎙 Sing & Earn</h3>
+      <p>Upload your voice & get paid.</p>
     </div>
-    <div class="video-card">
-      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-      <p>Sample Video 3</p>
+    <div class="card">
+      <h3>🎬 Edit Your Videos</h3>
+      <p>Use AI Editor to polish your videos.</p>
     </div>
-  </div>  <div class="bottom-bar">
-    <div onclick="alert('Go to Home')">🏠<br>Home</div>
-    <div onclick="alert('Open Shorts')">🎬<br>Shorts</div>
-    <div onclick="alert('Wallet')">💳<br>Wallet</div>
-    <div onclick="alert('Subscribe to view')">🔔<br>Subscribe</div>
-    <div onclick="alert('Login Required')">👤<br>Account</div>
-  </div>
-</body>
+    <div class="card">
+      <h3>💸 Start Earning</h3>
+      <p>Monetize your videos with TubeEarn.</p>
+    </div>
+  </div>  <div class="bottom-nav">
+    <a href="#">🏠 Home</a>
+    <a href="#">📥 APK Download</a>
+    <a href="#">💬 Subscription</a>
+    <a href="#">🔐 Login</a>
+  </div></body>
 </html>
