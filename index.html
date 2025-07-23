@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubeEarn - All in One</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }body {
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        background: #111;
+    }
+
+    nav button {
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    nav button:hover {
+        background: #333;
+    }
+
+    .story-section {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+        gap: 10px;
+        background: #fff;
+    }
+
+    .story {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #ccc;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    .shorts, .movies, .marketplace {
+        margin-bottom: 20px;
+    }
+
+    .shorts video {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .movies .card, .marketplace .card {
+        background: white;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #000;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    footer i {
+        font-size: 20px;
+    }
+</style>
+
+</head><body>
+    <header>
+        <h1>TubeEarn</h1>
+        <i class="fas fa-user"></i>
+    </header><nav>
+    <button>Story</button>
+    <button>Videos</button>
+    <button>Shorts</button>
+    <button>Movies</button>
+    <button>Music</button>
+    <button>Education</button>
+    <button>Shopping</button>
+    <button>Wallet</button>
+    <button>Gaming</button>
+    <button>Dating</button>
+    <button>Career</button>
+    <button>Settings</button>
+</nav>
+
+<section class="story-section">
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+</section>
+
+<section class="content-section">
+    <div class="shorts">
+        <h3>Short Videos</h3>
+        <video src="" controls></video>
+    </div>
+
+    <div class="movies">
+        <h3>Movies</h3>
+        <div class="card">Movie 1</div>
+        <div class="card">Movie 2</div>
+    </div>
+
+    <div class="marketplace">
+        <h3>Shopping Mall</h3>
+        <div class="card">Product 1</div>
+        <div class="card">Product 2</div>
+    </div>
+</section>
+
+<footer>
+    <i class="fas fa-home"></i>
+    <i class="fas fa-video"></i>
+    <i class="fas fa-plus-circle"></i>
+    <i class="fas fa-wallet"></i>
+    <i class="fas fa-user"></i>
+</footer>
+
+</body></html>
