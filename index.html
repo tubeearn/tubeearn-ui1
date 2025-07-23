@@ -6,118 +6,82 @@
   <title>TubeEarn - World's Fastest Multi-System Platform</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
     }
-    .navbar {
+    header {
+      background-color: #123456; /* Dark Blue */
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav {
+      background-color: #123456;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      background: #000;
-      color: #fff;
+      justify-content: center;
       padding: 10px;
-      font-size: 18px;
-    }
-    .navbar span {
-      cursor: pointer;
-    }
-    .section {
-      padding: 20px;
-    }
-    .section h2 {
-      margin-bottom: 10px;
-    }
-    .video-list, .shorts-list {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-    }
-    .video-card, .shorts-card, .story-card {
-      width: 200px;
-      height: 120px;
-      background: #ccc;
-      border-radius: 8px;
-    }
-    .shorts-card {
-      width: 120px;
-      height: 200px;
-    }
-    .story-bar {
-      position: fixed;
-      top: 80px;
-      right: 0;
-      display: flex;
-      flex-direction: column;
       gap: 10px;
-      padding: 10px;
     }
-    .story-card {
-      width: 80px;
-      height: 140px;
-      background: #aaa;
+    .nav-button {
+      background-color: #e0f7fa;
+      border: 2px solid #006064;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #004d40;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .nav-button:hover {
+      background-color: #b2ebf2;
     }
     .ad-banner {
-      background: yellow;
-      padding: 15px;
-      margin: 20px;
+      background-color: #ffd700;
+      color: #000;
       text-align: center;
-      font-weight: bold;
+      padding: 10px;
+      margin-top: 15px;
+    }
+    .content {
+      padding: 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navbar -->
-  <div class="navbar">
-    🏠 Home
-    🎬 Create
-    🛒 Shopping Mall
-    📚 Education
-    🎤 Singing
-    💘 Dating
-    🎞️ Video Editor
-    🎧 Audio Editor
-    🛍️ Marketplace
-    😊 Face Swipe
-    💼 Career
-    🔔 Upcoming
-    👤 Account
-    💰 Wallet
-  </div>
+  <header>TubeEarn - World's Fastest Multi-System Platform</header>
 
-  <!-- Right Side Stories -->
-  <div class="story-bar">
-    <div class="story-card"></div>
-    <div class="story-card"></div>
-    <div class="story-card"></div>
-  </div>
+  <nav>
+    <div class="nav-button">🏠 Home</div>
+    <div class="nav-button">🆕 Create</div>
+    <div class="nav-button">🛒 Shopping Mall</div>
+    <div class="nav-button">🎓 Education</div>
+    <div class="nav-button">🎤 Singing</div>
+    <div class="nav-button">💘 Dating</div>
+    <div class="nav-button">🎬 Video Editor</div>
+    <div class="nav-button">🎧 Audio Editor</div>
+    <div class="nav-button">🏪 Marketplace</div>
+    <div class="nav-button">📲 Face Swipe</div>
+    <div class="nav-button">👔 Career</div>
+    <div class="nav-button">🔔 Upcoming</div>
+    <div class="nav-button">👤 Account</div>
+    <div class="nav-button">💰 Wallet</div>
+  </nav>
 
-  <!-- Default Home Content -->
-  <div class="section">
-    <h2>🎥 Trending Videos</h2>
-    <div class="video-list">
-      <div class="video-card"></div>
-      <div class="video-card"></div>
-      <div class="video-card"></div>
-      <div class="video-card"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>🎬 Short Videos</h2>
-    <div class="shorts-list">
-      <div class="shorts-card"></div>
-      <div class="shorts-card"></div>
-      <div class="shorts-card"></div>
-      <div class="shorts-card"></div>
-    </div>
-  </div>
-
-  <!-- Ad Banner -->
+  <!-- Ad section below navigation bar -->
   <div class="ad-banner">
-    🚀 Ad: Promote your video here!
+    🔥 Promote your video now and earn rewards! 🔥
+  </div>
+
+  <div class="content">
+    <h2>Welcome to TubeEarn!</h2>
+    <p>This is the hub for trending videos, earnings summary, news and more. Click any tab above to explore.</p>
   </div>
 
 </body>
