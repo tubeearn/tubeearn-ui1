@@ -1,216 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TubeEarn - Multi-System Platform</title>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TubeEarn - Final Version</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    body {
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      padding-bottom: 70px; /* space for bottom nav */
-    }
+    }body {
+  background-color: #f8f8f8;
+}
 
-    header {
-      background-color: #123456;
-      padding: 10px;
-      text-align: center;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    nav {
-      background-color: #123456;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 10px;
-      gap: 10px;
-    }
+header h1 {
+  color: #e61c5d;
+}
 
-    .nav-button {
-      background-color: #e0f7fa;
-      border: 2px solid #006064;
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: bold;
-      color: #004d40;
-      cursor: pointer;
-      text-align: center;
-      transition: 0.3s;
-    }
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
 
-    .nav-button:hover {
-      background-color: #b2ebf2;
-    }
+nav ul li {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
 
-    .ad-banner {
-      background-color: #ffd700;
-      color: #000;
-      text-align: center;
-      padding: 10px;
-      margin-top: 10px;
-    }
+.stories {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: #fff;
+  gap: 15px;
+}
 
-    .content {
-      padding: 20px;
-      text-align: center;
-    }
+.story {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 2px solid #e61c5d;
+}
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+  gap: 20px;
+}
 
-    .video-box {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-      overflow: hidden;
-    }
+.video {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
 
-    .video-box img {
-      width: 100%;
-      height: auto;
-    }
+.video video {
+  width: 100%;
+  border-radius: 8px;
+}
 
-    .video-box h4 {
-      padding: 10px;
-      margin: 0;
-    }
+.video .info {
+  margin-top: 8px;
+  font-size: 14px;
+}
 
-    /* Bottom navigation like YouTube */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #ffffff;
-      box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-around;
-      padding: 8px 0;
-      z-index: 999;
-    }
+.earnings {
+  color: green;
+  font-weight: bold;
+}
 
-    .bottom-nav .icon-btn {
-      text-align: center;
-      font-size: 12px;
-      color: #333;
-      flex: 1;
-    }
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
 
-    .bottom-nav .icon-btn i {
-      font-size: 22px;
-      display: block;
-      margin-bottom: 4px;
-    }
+footer i {
+  font-size: 20px;
+  color: #e61c5d;
+}
 
-    @media screen and (max-width: 600px) {
-      nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 10px 5px;
-      }
-      .nav-button {
-        flex: 0 0 auto;
-        white-space: nowrap;
-      }
-    }
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.popup.show {
+  display: block;
+}
+
   </style>
+</head><body>
+  <header>
+    <h1>TubeEarn</h1>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Marketplace</li>
+        <li>Shopping</li>
+        <li>Teacher</li>
+        <li>Education</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>  <!-- Stories -->  <div class="stories">
+    <div class="story">Story 1</div>
+    <div class="story">Story 2</div>
+    <div class="story">Story 3</div>
+    <div class="story">Story 4</div>
+    <div class="story">Story 5</div>
+  </div>  <!-- Videos -->  <div class="videos">
+    <div class="video">
+      <video controls src="sample.mp4"></video>
+      <div class="info">
+        <p>Awesome Video Title</p>
+        <p class="earnings">💰 Earned: ₹500</p>
+      </div>
+    </div>
+    <div class="video">
+      <video controls src="sample2.mp4"></video>
+      <div class="info">
+        <p>Cool Travel Vlog</p>
+        <p class="earnings">💰 Earned: ₹1200</p>
+      </div>
+    </div>
+  </div>  <!-- Footer Icons -->  <footer>
+    <i class="fas fa-home"></i>
+    <i class="fas fa-plus-circle"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-user"></i>
+  </footer>  <!-- APK Download Popup -->  <div class="popup" id="apkPopup">
+    📥 Download the TubeEarn App! <button onclick="downloadAPK()">Download</button>
+  </div>  <script>
+    setTimeout(() => {
+      document.getElementById('apkPopup').classList.add('show');
+    }, 15000);
 
-  <!-- FontAwesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <script>
-    function loadSection(sectionName) {
-      const content = document.getElementById("mainContent");
-      content.innerHTML = `<h2>Loading ${sectionName}...</h2><p>This section is under construction or coming soon!</p>`;
+    function downloadAPK() {
+      window.location.href = 'TubeEarn.apk';
     }
-  </script>
-</head>
-<body>
-
-  <header>TubeEarn - World's Fastest Multi-System Platform</header>
-
-  <!-- Top Nav Buttons -->
-  <nav>
-    <div class="nav-button" onclick="loadSection('Home')">🏠 Home</div>
-    <div class="nav-button" onclick="loadSection('Create')">🆕 Create</div>
-    <div class="nav-button" onclick="loadSection('Shopping Mall')">🛒 Shopping</div>
-    <div class="nav-button" onclick="loadSection('Education')">🎓 Education</div>
-    <div class="nav-button" onclick="loadSection('Singing')">🎤 Singing</div>
-    <div class="nav-button" onclick="loadSection('Dating')">💘 Dating</div>
-    <div class="nav-button" onclick="loadSection('Video Editor')">🎬 Video Editor</div>
-    <div class="nav-button" onclick="loadSection('Audio Editor')">🎧 Audio Editor</div>
-    <div class="nav-button" onclick="loadSection('Marketplace')">🏪 Marketplace</div>
-    <div class="nav-button" onclick="loadSection('Face Swipe')">📲 Face Swipe</div>
-    <div class="nav-button" onclick="loadSection('Career')">👔 Career</div>
-    <div class="nav-button" onclick="loadSection('Upcoming')">🔔 Upcoming</div>
-    <div class="nav-button" onclick="loadSection('Account')">👤 Account</div>
-    <div class="nav-button" onclick="loadSection('Wallet')">💰 Wallet</div>
-  </nav>
-
-  <div class="ad-banner">
-    🔥 Promote your video now and earn rewards! 🔥
-  </div>
-
-  <!-- Main Content -->
-  <div class="content" id="mainContent">
-    <h2>🔥 Trending Short Videos</h2>
-    <div class="video-grid">
-      <div class="video-box">
-        <img src="https://placehold.co/300x170?text=Short+Video+1" alt="Short 1">
-        <h4>Comedy Shorts</h4>
-      </div>
-      <div class="video-box">
-        <img src="https://placehold.co/300x170?text=Short+Video+2" alt="Short 2">
-        <h4>Romantic Clips</h4>
-      </div>
-      <div class="video-box">
-        <img src="https://placehold.co/300x170?text=Short+Video+3" alt="Short 3">
-        <h4>Music Performance</h4>
-      </div>
-      <div class="video-box">
-        <img src="https://placehold.co/300x170?text=Short+Video+4" alt="Short 4">
-        <h4>Education Tips</h4>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Navigation Icons -->
-  <div class="bottom-nav">
-    <div class="icon-btn" onclick="loadSection('Home')">
-      <i class="fas fa-home"></i>
-      Home
-    </div>
-    <div class="icon-btn" onclick="loadSection('Shorts')">
-      <i class="fas fa-film"></i>
-      Shorts
-    </div>
-    <div class="icon-btn" onclick="loadSection('Create')">
-      <i class="fas fa-plus-circle"></i>
-      Create
-    </div>
-    <div class="icon-btn" onclick="loadSection('Subscription')">
-      <i class="fas fa-bell"></i>
-      Subscriptions
-    </div>
-    <div class="icon-btn" onclick="loadSection('Account')">
-      <i class="fas fa-user"></i>
-      Account
-    </div>
-  </div>
-
-</body>
-</html>
+  </script></body></html>
