@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TubeEarn</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+    }
+    header, nav, footer {
+      background-color: #fff;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    nav button {
+      display: inline-block;
+      padding: 8px 12px;
+      margin: 4px;
+      background: #eee;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background-color: #ddd;
+    }
+    .stories {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px;
+    }
+    .story {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ccc;
+      margin: 0 8px;
+    }
+    .shorts, .videos {
+      padding: 10px;
+    }
+    .short-video, .video-card {
+      background: white;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #ccc;
+    }
+    footer button {
+      background: none;
+      border: none;
+      font-size: 16px;
+    }
+  </style>
+</head><body>
+  <header>
+    <h2>TubeEarn</h2>
+    <div>👤</div>
+  </header>  <nav>
+    <button onclick="navigate('stories')">Stories</button>
+    <button onclick="navigate('shorts')">Shorts</button>
+    <button onclick="navigate('videos')">Videos</button>
+    <button onclick="navigate('movies')">Movies</button>
+    <button onclick="navigate('music')">Music</button>
+    <button onclick="navigate('education')">Education</button>
+    <button onclick="navigate('shopping')">Shopping</button>
+    <button onclick="navigate('wallet')">Wallet</button>
+    <button onclick="navigate('gaming')">Gaming</button>
+    <button onclick="navigate('dating')">Dating</button>
+    <button onclick="navigate('career')">Career</button>
+    <button onclick="navigate('settings')">Settings</button>
+  </nav>  <section class="stories">
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+  </section>  <section class="shorts">
+    <h3>Short Videos</h3>
+    <div class="short-video">Short 1</div>
+    <div class="short-video">Short 2</div>
+  </section>  <section class="videos">
+    <h3>Latest Videos</h3>
+    <div class="video-card">Video 1</div>
+    <div class="video-card">Video 2</div>
+    <div class="video-card">Video 3</div>
+  </section>  <footer>
+    <button onclick="navigate('home')">🏠</button>
+    <button onclick="navigate('video')">🎬</button>
+    <button onclick="navigate('upload')">➕</button>
+    <button onclick="navigate('wallet')">💰</button>
+    <button onclick="navigate('profile')">👤</button>
+  </footer>  <script>
+    function navigate(section) {
+      alert("Navigating to: " + section);
+    }
+  </script></body></html>
