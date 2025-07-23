@@ -2,145 +2,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn Dashboard</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>TubeEarn Platform</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      display: flex;
-      min-height: 100vh;
-      background-color: #f0f2f5;
-    }
-    aside {
-      width: 240px;
-      background-color: #1c1c1c;
-      color: white;
-      padding: 20px;
-      height: 100vh;
-      overflow-y: auto;
-      position: fixed;
-    }
-    aside h2 {
-      font-size: 22px;
-      margin-bottom: 25px;
-      text-align: center;
-      color: #00c3ff;
-    }
-    aside ul {
-      list-style: none;
-    }
-    aside ul li {
-      padding: 12px 15px;
-      cursor: pointer;
-      transition: background 0.2s ease-in-out;
-    }
-    aside ul li:hover {
-      background-color: #333;
-    }
-    aside ul li i {
-      margin-right: 10px;
-    }
-    main {
-      margin-left: 240px;
-      flex: 1;
-      padding: 30px;
-    }
-    header {
-      background: #ffffff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    header .logo {
-      font-size: 20px;
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: Arial, sans-serif; background: #f4f4f4; color: #333;}
+    header {display: flex; align-items: center; justify-content: space-between; background: #111; color: #fff; padding: 10px 20px;}
+    .logo {height: 40px;}
+    nav button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      background: #f90;
+      border: none;
+      color: #fff;
       font-weight: bold;
-      color: #00c3ff;
+      cursor: pointer;
     }
-    header nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #555;
-    }
-    .content {
-      margin-top: 20px;
-    }
-    .section-title {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
+    nav button:hover {background: #fb0;}
+    .section {display: none; padding: 20px;}
+    .active {display: block;}
     footer {
+      background: #111;
+      color: #fff;
+      padding: 20px;
       text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #777;
+      margin-top: 50px;
+    }
+    .highlight {
+      color: #f90;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-  <aside>
-    <h2>📺 TubeEarn</h2>
-    <ul>
-      <li><i class="material-icons">videocam</i> Creator Zone</li>
-      <li style="padding-left:30px">Upload Video</li>
-      <li style="padding-left:30px">Upload Shorts</li>
-      <li style="padding-left:30px">Live Stream</li>
-      <li style="padding-left:30px">Monetization</li>
-      <li><i class="material-icons">favorite</i> Dating Section</li>
-      <li style="padding-left:30px">Match</li>
-      <li style="padding-left:30px">Video Chat</li>
-      <li style="padding-left:30px">Like & Follow</li>
-      <li><i class="material-icons">shopping_cart</i> Shopping Mall</li>
-      <li style="padding-left:30px">Buyer Account</li>
-      <li style="padding-left:30px">Seller Login</li>
-      <li style="padding-left:30px">Products</li>
-      <li><i class="material-icons">video_call</i> Video Editors</li>
-      <li style="padding-left:30px">Photo to Video</li>
-      <li style="padding-left:30px">Video to Video</li>
-      <li style="padding-left:30px">Face Camera Effects</li>
-      <li><i class="material-icons">music_note</i> Audio Editor</li>
-      <li><i class="material-icons">sports_esports</i> Gaming Zone (Coming Soon)</li>
-      <li><i class="material-icons">school</i> Education System</li>
-      <li><i class="material-icons">work</i> Career</li>
-    </ul>
-  </aside>
-  <main>
-    <header>
-      <div class="logo">TubeEarn</div>
-      <nav>
-        <a href="#">Login</a>
-        <a href="#">Signup</a>
-      </nav>
-    </header>
-    <div class="content">
-      <div class="box">
-        <h3 class="section-title">Welcome to TubeEarn</h3>
-        <p>This is your all-in-one earning platform. Click any section from the left menu to get started.</p>
-      </div>
-      <div class="box">
-        <h3 class="section-title">Live Features</h3>
-        <p>Live streaming, shorts, monetization stats and more – coming soon with real-time updates.</p>
-      </div>
-    </div>
-    <footer>
-      &copy; 2025 TubeEarn. All rights reserved.
-    </footer>
-  </main>
-</body>
+  <header>
+    <img src="https://i.imgur.com/6RLHX6L.png" alt="TubeEarn Logo" class="logo" />
+    <nav>
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('creator')">Create</button>
+      <button onclick="showSection('shopping')">Shopping Mall</button>
+      <button onclick="showSection('education')">Education</button>
+      <button onclick="showSection('singing')">Singing</button>
+      <button onclick="showSection('dating')">Dating</button>
+      <button onclick="showSection('video')">Video Editor</button>
+      <button onclick="showSection('audio')">Audio Editor</button>
+    </nav>
+  </header>  <main>
+    <section id="home" class="section active">
+      <h1>Welcome to TubeEarn</h1>
+      <p class="highlight">World’s Fastest Growing Platform – No Time Waste, Only Money Earn!</p>
+    </section>
+    <section id="creator" class="section">
+      <h2>Become a Creator</h2>
+      <p>Upload short & long videos, earn through views, gifts and ads.</p>
+    </section>
+    <section id="shopping" class="section">
+      <h2>TubeEarn Shopping Mall</h2>
+      <p>Marketplace coming soon with worldwide delivery support.</p>
+    </section>
+    <section id="education" class="section">
+      <h2>Raj Education System</h2>
+      <p>Learn from the best AI-powered teachers around the world.</p>
+    </section>
+    <section id="singing" class="section">
+      <h2>Singing Feature</h2>
+      <p>Record songs, apply effects, and share with fans worldwide.</p>
+    </section>
+    <section id="dating" class="section">
+      <h2>Dating and Video Match</h2>
+      <p>Find and connect with people via video chat and matching.</p>
+    </section>
+    <section id="video" class="section">
+      <h2>Video Editor</h2>
+      <p>Use our advanced editor to enhance your content.</p>
+    </section>
+    <section id="audio" class="section">
+      <h2>Audio Editor</h2>
+      <p>Remix, edit and create trending audio tracks for your videos.</p>
+    </section>
+  </main>  <footer>
+    &copy; 2025 TubeEarn | <span class="highlight">World’s Fastest Growing Platform</span>
+  </footer>  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script></body>
 </html>
