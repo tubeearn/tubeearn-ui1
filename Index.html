@@ -1,125 +1,112 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn - Watch Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TubeEarn UI</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #000;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
     }
     header {
-      background-color: #fff;
+      background-color: #1d3557;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background-color: #457b9d;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav button {
+      background-color: #a8dadc;
+      border: none;
+      margin: 10px;
       padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo {
-      font-size: 24px;
+      cursor: pointer;
       font-weight: bold;
-      color: #e91e63;
     }
-    .nav-icons span {
-      margin-left: 20px;
-      cursor: pointer;
+    nav button:hover {
+      background-color: #f1faee;
     }
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .section {
+      display: none;
       padding: 20px;
-    }
-    .video-container {
-      width: 90%;
-      max-width: 900px;
-      background: #000;
-    }
-    video {
-      width: 100%;
-      height: auto;
-    }
-    .video-details {
-      margin-top: 10px;
-      width: 90%;
-      max-width: 900px;
-    }
-    .related-videos {
-      margin-top: 30px;
-      width: 90%;
-      max-width: 900px;
-    }
-    .related-videos h3 {
-      margin-bottom: 10px;
-    }
-    .related-list {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-    }
-    .related-item {
-      min-width: 160px;
       background-color: #fff;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow: hidden;
-      cursor: pointer;
     }
-    .related-item img {
-      width: 100%;
-      height: 90px;
-      object-fit: cover;
-    }
-    .related-item p {
-      padding: 5px;
-      font-size: 14px;
+    .active {
+      display: block;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">TubeEarn</div>
-    <div class="nav-icons">
-      <span>Trending</span>
-      <span>Marketplace</span>
-      <span>Settings</span>
-    </div>
-  </header>  <main>
-    <div class="video-container">
-      <video controls>
-        <source src="sample-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div><div class="video-details">
-  <h2>Video Title Here</h2>
-  <p>Video description, views, uploaded date, etc.</p>
-</div>
+    <h1>TubeEarn - World's Fastest Multi-System Platform</h1>
+  </header>
+  <nav>
+    <button onclick="showSection('home')">🏠 Home</button>
+    <button onclick="showSection('create')">🎬 Create</button>
+    <button onclick="showSection('shopping')">🛒 Shopping Mall</button>
+    <button onclick="showSection('education')">📚 Education</button>
+    <button onclick="showSection('singing')">🎤 Singing</button>
+    <button onclick="showSection('dating')">💘 Dating</button>
+    <button onclick="showSection('videoeditor')">🎞️ Video Editor</button>
+    <button onclick="showSection('audioeditor')">🎧 Audio Editor</button>
+  </nav>
 
-<div class="related-videos">
-  <h3>Related Videos</h3>
-  <div class="related-list">
-    <div class="related-item">
-      <img src="thumb1.jpg" alt="Related video" />
-      <p>Related Video 1</p>
-    </div>
-    <div class="related-item">
-      <img src="thumb2.jpg" alt="Related video" />
-      <p>Related Video 2</p>
-    </div>
-    <div class="related-item">
-      <img src="thumb3.jpg" alt="Related video" />
-      <p>Related Video 3</p>
-    </div>
-    <!-- Add more related items -->
+  <div id="home" class="section active">
+    <h2>Welcome to TubeEarn!</h2>
+    <p>This is the hub for trending videos, earnings summary, news and more. Click any tab above to explore.</p>
   </div>
-</div>
 
-  </main>
+  <div id="create" class="section">
+    <h2>Create Account (TubeEarn Creator)</h2>
+    <p>Platform: TubeEarn Dating, Singing, Education & More</p>
+    <p>Click below to start your creator journey:</p>
+    <button onclick="alert('Creator Account Created')">Create Creator Account</button>
+  </div>
+
+  <div id="shopping" class="section">
+    <h2>TubeEarn Shopping Mall</h2>
+    <p>Upcoming eCommerce feature. Buy & Sell directly!</p>
+  </div>
+
+  <div id="education" class="section">
+    <h2>Raj Education System</h2>
+    <p>AI-Powered Online Education Platform for All Countries.</p>
+  </div>
+
+  <div id="singing" class="section">
+    <h2>Singing Feature</h2>
+    <p>Upload your singing videos, collaborate, use music library & more.</p>
+  </div>
+
+  <div id="dating" class="section">
+    <h2>TubeEarn Dating</h2>
+    <p>Meet people, go live, send gifts, and more. Subscription required.</p>
+  </div>
+
+  <div id="videoeditor" class="section">
+    <h2>Video Editor</h2>
+    <p>Coming Soon: Edit and publish your videos with powerful tools.</p>
+  </div>
+
+  <div id="audioeditor" class="section">
+    <h2>Audio Editor</h2>
+    <p>Coming Soon: Trim, remix, and enhance your audio files directly in browser.</p>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
