@@ -1,110 +1,242 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TubeEarn App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TubeEarn - World's Fastest Multi-System Platform</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: sans-serif;
     }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      background: #f5f5f5;
     }
     header {
-      background-color: #6200ea;
+      background: #092c5c;
       color: white;
-      padding: 10px 20px;
+      padding: 12px;
+      font-size: 1.1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header h1 {
-      font-size: 1.5em;
+    .search-icon {
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 10px;
     }
-    nav {
+    .nav-bar {
       display: flex;
-      justify-content: space-around;
-      background-color: white;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      padding: 10px 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: #333;
-      text-align: center;
-      font-size: 0.9em;
-    }
-    nav a:hover {
-      color: #6200ea;
-    }
-    nav .icon {
-      display: block;
-      font-size: 1.4em;
-    }
-    .main {
-      padding: 20px;
-      padding-bottom: 80px;
-      text-align: center;
-    }
-    .search-bar {
-      display: flex;
-      justify-content: center;
-      margin: 10px;
-    }
-    .search-bar input {
-      width: 80%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      background: #cbe2f7;
       padding: 10px;
-      font-size: 1em;
+      gap: 10px;
+      scrollbar-width: none;
     }
-    .popup {
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    .nav-bar::-webkit-scrollbar {
       display: none;
     }
-    .popup.active {
-      display: block;
+    .nav-bar button {
+      padding: 10px;
+      border: none;
+      background: #d8f0f8;
+      border-radius: 6px;
+      font-weight: bold;
+      white-space: nowrap;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .ticker {
+      display: flex;
+      align-items: center;
+      background: #001f3f;
+      color: white;
+      padding: 5px 10px;
+      overflow: hidden;
+    }
+    .ticker img {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+    }
+    .scroll-text {
+      white-space: nowrap;
+      animation: scroll-left 20s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .story {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      padding: 10px;
+      background: white;
+    }
+    .story div {
+      width: 60px;
+      height: 60px;
+      border: 3px solid pink;
+      border-radius: 50%;
+    }
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: navy;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .reels, .trending, .ads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 10px;
+    }
+    .reels img, .trending img, .ads img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      background: #092c5c;
+      padding: 10px 0;
+    }
+    .bottom-nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .bottom-nav .center-btn {
+      background: white;
+      color: #092c5c;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -25px;
+    }
+
+    /* Button Section Styling */
+    .button-section {
+      padding: 20px;
+      text-align: center;
+    }
+    .button-section h2 {
+      color: #092c5c;
+      margin-bottom: 15px;
+    }
+    .button-section button {
+      margin: 5px;
+      padding: 10px 20px;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button-section button:hover {
+      background: #e91e63;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>📺 TubeEarn</h1>
-    <marquee behavior="scroll" direction="left">Welcome to TubeEarn</marquee>
-  </header>  <div class="search-bar">
-    <input type="text" placeholder="Search videos...">
-  </div>  <div class="main">
-    <h2>Random Videos Appear Here</h2>
-    <p>Video content coming soon...</p>
-  </div>  <nav>
-    <a href="#home"><span class="icon">🏠</span>Home</a>
-    <a href="#shorts"><span class="icon">🎬</span>Shorts</a>
-    <a href="#upload"><span class="icon">➕</span>Upload</a>
-    <a href="#subscriptions"><span class="icon">📺</span>Subscribe</a>
-    <a href="#account"><span class="icon">👤</span>Account</a>
-  </nav>  <div class="popup" id="apkPopup">
-    <p>📲 Download the TubeEarn App Now!</p>
-    <button onclick="closePopup()">Close</button>
-  </div>  <script>
-    function closePopup() {
-      document.getElementById("apkPopup").style.display = "none";
-      localStorage.setItem("apkPopupShown", "true");
-    }
 
-    window.onload = () => {
-      if (!localStorage.getItem("apkPopupShown")) {
-        document.getElementById("apkPopup").classList.add("active");
-      }
-    };
-  </script></body>
+  <header>
+    <div>TubeEarn - World's Fastest Multi-System Platform</div>
+    <div class="search-icon">🔍</div>
+  </header>
+
+  <div class="nav-bar">
+    <button>🏠 Home</button>
+    <button>🎥 Create</button>
+    <button>🛍️ Shopping Mall</button>
+    <button>📘 Education</button>
+    <button>🎤 Singing</button>
+    <button>💖 Dating</button>
+    <button>🎬 Video Editor</button>
+    <button>🎵 Audio Editor</button>
+    <button>🛒 Marketplace</button>
+    <button>😊 Face Swipe</button>
+    <button>🧑‍💼 Career</button>
+    <button>🚀 Upcoming</button>
+    <button>👤 Account</button>
+    <button>💼 Wallet</button>
+  </div>
+
+  <div class="ticker">
+    <img src="logo.png" alt="logo" />
+    <div class="scroll-text">Welcome to TubeEarn - Create | Earn | Perform | Educate | Shop | Date & more!</div>
+  </div>
+
+  <div class="story">
+    <div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="section-title">📲 REELS 👇</div>
+  <div class="reels">
+    <img src="reel1.jpg" alt="Reel 1" />
+    <img src="reel2.jpg" alt="Reel 2" />
+  </div>
+
+  <div class="section-title">🔥 Trending Video 👇</div>
+  <div class="trending">
+    <img src="trend1.jpg" alt="Trending 1" />
+    <img src="trend2.jpg" alt="Trending 2" />
+  </div>
+
+  <div class="ads">
+    <img src="ad1.jpg" alt="Ad 1" />
+    <img src="ad2.jpg" alt="Ad 2" />
+  </div>
+
+  <div class="section-title">📢 Ads Section 👇</div>
+  <div class="ads">
+    <img src="ad3.jpg" alt="Ad 3" />
+    <img src="ad4.jpg" alt="Ad 4" />
+  </div>
+
+  <!-- Button Section Start -->
+  <div class="button-section">
+    <h2>🚀 TubeEarn Special Features</h2>
+    <button>💸 Earn Money</button>
+    <button>📞 Voice Call</button>
+    <button>🎥 Video Call</button>
+    <button>🎤 Talent Show</button>
+    <button>📚 Online Course</button>
+    <button>📰 News & Updates</button>
+    <button>💖 Date Match</button>
+    <button>🔒 Safe Mode</button>
+    <button>🌐 Global Chat</button>
+    <button>💼 Job Apply</button>
+  </div>
+  <!-- Button Section End -->
+
+  <div class="bottom-nav">
+    <button>🏠</button>
+    <button>🎬 Shorts</button>
+    <button class="center-btn">＋</button>
+    <button>🔔 Sub</button>
+    <button>👤</button>
+  </div>
+
+</body>
 </html>
