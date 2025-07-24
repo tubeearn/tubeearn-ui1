@@ -1,220 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn</title>
+  <title>TubeEarn - World's Fastest Multi-System Platform</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: sans-serif;
-      background-color: #f2f2f2;
     }
-
-    /* Top marquee welcome */
-    .welcome-bar {
-      background: linear-gradient(to right, #00c6ff, #0072ff);
+    body {
+      background: #f5f5f5;
+    }
+    header {
+      background: #092c5c;
       color: white;
-      padding: 10px;
-      font-weight: bold;
+      padding: 12px;
+      text-align: center;
+      font-size: 1.1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-
-    .marquee {
-      white-space: nowrap;
-      overflow: hidden;
-    }
-
-    .marquee span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: scroll-left 15s linear infinite;
-    }
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    /* Logo & nav icon area */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      background-color: #ffffff;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 18px;
-      color: #0072ff;
-    }
-
-    .nav-icons {
+    .nav-bar {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      background: #cbe2f7;
+      padding: 10px;
       gap: 10px;
+    }
+    .nav-bar button {
+      padding: 10px;
+      border: none;
+      background: #d8f0f8;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .ticker {
+      display: flex;
+      align-items: center;
+      background: #001f3f;
+      color: white;
+      padding: 5px 10px;
+      overflow: hidden;
+    }
+    .ticker img {
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+    }
+    .scroll-text {
+      white-space: nowrap;
+      animation: scroll-left 20s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .story {
+      display: flex;
+      gap: 15px;
       justify-content: center;
       padding: 10px;
-      background: #ffffff;
-    }
-
-    .nav-icons div {
-      text-align: center;
-      width: 60px;
-    }
-
-    .nav-icons img {
-      width: 40px;
-      height: 40px;
-    }
-
-    .story-section {
-      display: flex;
-      overflow-x: auto;
-      padding: 10px;
       background: white;
-      gap: 10px;
     }
-
-    .story-circle {
+    .story div {
       width: 60px;
       height: 60px;
+      border: 3px solid pink;
       border-radius: 50%;
-      border: 2px solid #0072ff;
-      background-color: lightgray;
     }
-
-    .home-feed {
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: navy;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .reels, .trending, .ads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
       padding: 10px;
     }
-
-    .ad-bar {
-      background-color: #ffd700;
-      text-align: center;
-      padding: 8px;
-      font-weight: bold;
+    .reels img, .trending img, .ads img {
+      width: 100%;
+      border-radius: 8px;
     }
-
-    /* Bottom navigation bar */
     .bottom-nav {
       position: fixed;
       bottom: 0;
       left: 0;
-      width: 100%;
-      background: white;
+      right: 0;
       display: flex;
       justify-content: space-around;
-      align-items: center;
-      padding: 8px 0;
-      border-top: 1px solid #ccc;
+      background: #092c5c;
+      padding: 10px 0;
     }
-
     .bottom-nav button {
       background: none;
       border: none;
-      font-size: 14px;
-      color: #0072ff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
     }
-
-    /* One-time APK popup */
-    .apk-popup {
-      position: fixed;
-      top: 20%;
-      left: 10%;
-      right: 10%;
+    .bottom-nav .center-btn {
       background: white;
-      padding: 20px;
-      border: 2px solid #0072ff;
-      z-index: 999;
-      display: none;
-    }
-
-    .apk-popup.show {
-      display: block;
+      color: #092c5c;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -25px;
     }
   </style>
 </head>
 <body>
-
-  <!-- Welcome marquee -->
-  <div class="welcome-bar">
-    <div class="marquee">
-      <span>Welcome to TubeEarn – World's No.1 Growth & Earning Site 💰🔥</span>
-    </div>
+  <header>TubeEarn - World's Fastest Multi-System Platform</header>  <div class="nav-bar">
+    <button>🏠 Home</button>
+    <button>🎥 Create</button>
+    <button>🛍️ Shopping Mall</button>
+    <button>📘 Education</button>
+    <button>🎤 Singing</button>
+    <button>💖 Dating</button>
+    <button>🎬 Video Editor</button>
+    <button>🎵 Audio Editor</button>
+    <button>🛒 Marketplace</button>
+    <button>😊 Face Swipe</button>
+    <button>🧑‍💼 Career</button>
+    <button>🚀 Upcoming</button>
+    <button>👤 Account</button>
+    <button>💼 Wallet</button>
+  </div>  <div class="ticker">
+    <img src="logo.png" alt="logo" />
+    <div class="scroll-text">Welcome to TubeEarn - Create | Earn | Perform | Educate | Shop | Date & more!</div>
+  </div>  <div class="story">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>  <div class="section-title">📲 REELS 👇</div>
+  <div class="reels">
+    <img src="reel1.jpg" alt="Reel 1" />
+    <img src="reel2.jpg" alt="Reel 2" />
+  </div>  <div class="section-title">🔥 Trending Video 👇</div>
+  <div class="trending">
+    <img src="trend1.jpg" alt="Trending 1" />
+    <img src="trend2.jpg" alt="Trending 2" />
+  </div>  <div class="ads">
+    <img src="ad1.jpg" alt="Ad 1" />
+    <img src="ad2.jpg" alt="Ad 2" />
+  </div>  <div class="section-title">📢 Ads Section 👇</div>
+  <div class="ads">
+    <img src="ad3.jpg" alt="Ad 3" />
+    <img src="ad4.jpg" alt="Ad 4" />
+  </div>  <div class="bottom-nav">
+    <button>🏠</button>
+    <button>🎬 Shorts</button>
+    <button class="center-btn">＋</button>
+    <button>🔔 Sub</button>
+    <button>👤</button>
   </div>
-
-  <!-- Header -->
-  <div class="header">
-    <div class="logo">TubeEarn</div>
-    <div><img src="https://img.icons8.com/ios-filled/50/menu--v1.png" width="30" /></div>
-  </div>
-
-  <!-- Navigation icons -->
-  <div class="nav-icons">
-    <div><img src="https://img.icons8.com/color/48/youtube-play.png"/><br>Shorts</div>
-    <div><img src="https://img.icons8.com/color/48/movie.png"/><br>Movies</div>
-    <div><img src="https://img.icons8.com/color/48/open-book--v1.png"/><br>Education</div>
-    <div><img src="https://img.icons8.com/color/48/music.png"/><br>Music</div>
-    <div><img src="https://img.icons8.com/color/48/live-tv.png"/><br>Live</div>
-    <div><img src="https://img.icons8.com/color/48/facebook-like.png"/><br>Trending</div>
-  </div>
-
-  <!-- Story Circle Section -->
-  <div class="story-section">
-    <div class="story-circle"></div>
-    <div class="story-circle"></div>
-    <div class="story-circle"></div>
-    <div class="story-circle"></div>
-    <div class="story-circle"></div>
-  </div>
-
-  <!-- Ad Bar -->
-  <div class="ad-bar">🔥 Special Offer! Promote your video now & earn more! 🔥</div>
-
-  <!-- Home Feed -->
-  <div class="home-feed">
-    <h3>Random Shorts, Long Videos & More</h3>
-    <p>Explore trending and new uploads from around the world.</p>
-  </div>
-
-  <!-- Bottom Navigation -->
-  <div class="bottom-nav">
-    <button onclick="openPage('home')">🏠<br>Home</button>
-    <button onclick="openPage('search')">🔍<br>Search</button>
-    <button onclick="openPage('shorts')">🎬<br>Shorts</button>
-    <button onclick="openPage('upload')">➕<br>Upload</button>
-    <button onclick="openPage('subs')">🔔<br>Subs</button>
-    <button onclick="openPage('account')">👤<br>Account</button>
-  </div>
-
-  <!-- APK Download Popup -->
-  <div class="apk-popup" id="apkPopup">
-    <h3>📲 Download TubeEarn App</h3>
-    <p>For better experience, download our official APK now!</p>
-    <button onclick="document.getElementById('apkPopup').style.display='none'">Close</button>
-  </div>
-
-  <script>
-    // One-time popup
-    window.onload = function() {
-      if (!localStorage.getItem("apkShown")) {
-        document.getElementById("apkPopup").classList.add("show");
-        localStorage.setItem("apkShown", true);
-      }
-    };
-
-    // Button actions
-    function openPage(page) {
-      alert("Opening: " + page + " page (demo)");
-    }
-  </script>
 </body>
 </html>
