@@ -38,9 +38,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       background-color: #212121;
       padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
@@ -51,18 +53,16 @@
 
     .nav-icons {
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: flex-end;
+      gap: 12px;
     }
 
     .nav-icons i {
       font-size: 1.2em;
       cursor: pointer;
+      color: white;
     }
 
     .stories {
-      margin-top: 10px;
       padding: 10px;
       display: flex;
       gap: 10px;
@@ -74,7 +74,8 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: gray;
+      background: linear-gradient(45deg, #ff0000, #ff9900);
+      border: 3px solid white;
       flex: 0 0 auto;
     }
 
@@ -92,11 +93,13 @@
     .sidebar-ad {
       position: fixed;
       right: 0;
-      bottom: 100px;
+      top: 30%;
       background: yellow;
       color: black;
-      padding: 5px;
+      padding: 6px 12px;
       font-size: 0.9em;
+      z-index: 999;
+      border-radius: 8px 0 0 8px;
     }
 
     .bottom-nav {
@@ -105,10 +108,11 @@
       width: 100%;
       display: flex;
       justify-content: space-around;
+      align-items: center;
       background-color: #212121;
       padding: 10px 0;
       border-top: 1px solid #333;
-      z-index: 999;
+      z-index: 1000;
     }
 
     .bottom-nav i {
@@ -127,14 +131,18 @@
       padding: 20px;
       border-radius: 10px;
       display: none;
-      z-index: 999;
+      z-index: 1001;
     }
   </style>
 </head>
 <body>
 
-  <div class="marquee"><span>Welcome to TubeEarn, world ka sabse no 1 Growth & Earning Site</span></div>
+  <!-- Marquee Header -->
+  <div class="marquee">
+    <span>🚀 Welcome to TubeEarn – India’s #1 Earning & Video Platform | Upload Videos | Go Live | Earn from Gifts & Ads 🎁</span>
+  </div>
 
+  <!-- Top Navigation -->
   <div class="top-nav">
     <div class="logo">TubeEarn</div>
     <div class="nav-icons">
@@ -150,13 +158,16 @@
     </div>
   </div>
 
+  <!-- Insta Story Circle -->
   <div class="stories">
+    <div class="story-circle"></div>
     <div class="story-circle"></div>
     <div class="story-circle"></div>
     <div class="story-circle"></div>
     <div class="story-circle"></div>
   </div>
 
+  <!-- Main Content -->
   <div class="content">
     <div class="video-section">🔥 Trending Shorts</div>
     <div class="video-section">🎥 Long Videos</div>
@@ -165,19 +176,23 @@
     <div class="video-section">💼 Career Stories</div>
   </div>
 
+  <!-- Sidebar Ad -->
   <div class="sidebar-ad">👉 Ad Space</div>
 
+  <!-- Bottom Navigation -->
   <div class="bottom-nav">
-    <i class="fa fa-home" onclick="alert('Home Clicked')"></i>
-    <i class="fa fa-search" onclick="alert('Search Clicked')"></i>
-    <i class="fa fa-plus-circle" onclick="alert('Create Clicked')"></i>
-    <i class="fa fa-bell" onclick="alert('Subscriptions Clicked')"></i>
-    <i class="fa fa-user" onclick="alert('Account Clicked')"></i>
+    <i class="fa fa-home" onclick="alert('Home')"></i>
+    <i class="fa fa-search" onclick="alert('Search')"></i>
+    <i class="fa fa-plus-circle" onclick="alert('Upload/Create')"></i>
+    <i class="fa fa-bell" onclick="alert('Notifications')"></i>
+    <i class="fa fa-user" onclick="alert('Account')"></i>
   </div>
 
+  <!-- App Download Popup -->
   <div class="apk-popup" id="apkPopup">📥 Download TubeEarn App Now!</div>
 
   <script>
+    // Popup Show
     window.onload = function () {
       const popup = document.getElementById("apkPopup");
       popup.style.display = "block";
