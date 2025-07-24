@@ -1,139 +1,110 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TubeEarn U1</title>
+  <title>TubeEarn App</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }body {
-  font-family: Arial, sans-serif;
-  background-color: #e6f0ff;
-  padding-bottom: 70px;
-}
-
-header {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-header img {
-  height: 30px;
-  margin-right: 10px;
-}
-
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: scroll 10s linear infinite;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-main {
-  padding: 20px;
-}
-
-.video-section {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-}
-
-.video-card {
-  flex: 0 0 auto;
-  width: 200px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  padding: 10px;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-}
-
-footer button {
-  background: none;
-  border: none;
-  font-size: 18px;
-}
-
-#popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-#popupContent {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-#popup button {
-  margin-top: 10px;
-}
-
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    header {
+      background-color: #6200ea;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5em;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    nav a:hover {
+      color: #6200ea;
+    }
+    nav .icon {
+      display: block;
+      font-size: 1.4em;
+    }
+    .main {
+      padding: 20px;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+    }
+    .search-bar input {
+      width: 80%;
+      padding: 10px;
+      font-size: 1em;
+    }
+    .popup {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      display: none;
+    }
+    .popup.active {
+      display: block;
+    }
   </style>
-</head><body>
-  <div id="popup">
-    <div id="popupContent">
-      <h3>Download TubeEarn APK</h3>
-      <p>Get the app now for a better experience!</p>
-      <button onclick="closePopup()">Close</button>
-    </div>
-  </div>  <header>
-    <img src="https://via.placeholder.com/30" alt="TubeEarn Logo">
-    <div class="marquee">Welcome to U1 – India's Video Talent Platform</div>
-  </header>  <main>
-    <h2>Recommended Videos</h2>
-    <div class="video-section">
-      <div class="video-card">🎬 Video 1</div>
-      <div class="video-card">🎬 Video 2</div>
-      <div class="video-card">🎬 Video 3</div>
-    </div>
-  </main>  <footer>
-    <button onclick="alert('Home clicked')">🏠</button>
-    <button onclick="alert('Search clicked')">🔍</button>
-    <button onclick="alert('Upload Shorts')">➕</button>
-    <button onclick="alert('Subscriptions clicked')">🔔</button>
-    <button onclick="alert('Account clicked')">👤</button>
-  </footer>  <script>
+</head>
+<body>
+  <header>
+    <h1>📺 TubeEarn</h1>
+    <marquee behavior="scroll" direction="left">Welcome to TubeEarn</marquee>
+  </header>  <div class="search-bar">
+    <input type="text" placeholder="Search videos...">
+  </div>  <div class="main">
+    <h2>Random Videos Appear Here</h2>
+    <p>Video content coming soon...</p>
+  </div>  <nav>
+    <a href="#home"><span class="icon">🏠</span>Home</a>
+    <a href="#shorts"><span class="icon">🎬</span>Shorts</a>
+    <a href="#upload"><span class="icon">➕</span>Upload</a>
+    <a href="#subscriptions"><span class="icon">📺</span>Subscribe</a>
+    <a href="#account"><span class="icon">👤</span>Account</a>
+  </nav>  <div class="popup" id="apkPopup">
+    <p>📲 Download the TubeEarn App Now!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>  <script>
     function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-      localStorage.setItem('popupClosed', 'true');
+      document.getElementById("apkPopup").style.display = "none";
+      localStorage.setItem("apkPopupShown", "true");
     }
 
-    window.onload = function () {
-      if (localStorage.getItem('popupClosed')) {
-        document.getElementById('popup').style.display = 'none';
+    window.onload = () => {
+      if (!localStorage.getItem("apkPopupShown")) {
+        document.getElementById("apkPopup").classList.add("active");
       }
-    }
-  </script></body></html>
+    };
+  </script></body>
+</html>
