@@ -2,47 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TubeEarn - Multi-System Platform</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .bottom-nav {
-      display: flex;
-      justify-content: space-around;
-      background-color: #f5f5f5;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    .bottom-nav a {
-      text-decoration: none;
-      font-size: 22px;
-      color: #000;
-    }
-    .bottom-nav a:hover {
-      color: blue;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
   <header>
     <h1>TubeEarn - World's Fastest Multi-System Platform</h1>
     <nav class="top-nav">
-      <button onclick="location.href='index.html'">🏠 Home</button>
-      <button onclick="location.href='create.html'">🛠 Create</button>
-      <button onclick="location.href='shop.html'">🛍 Shopping Mall</button>
-      <button onclick="location.href='education.html'">📚 Education</button>
-      <button onclick="location.href='singing.html'">🎤 Singing</button>
-      <button onclick="location.href='dating.html'">❤️ Dating</button>
-      <button onclick="location.href='video-editor.html'">🎬 Video Editor</button>
-      <button onclick="location.href='audio-editor.html'">🎧 Audio Editor</button>
-      <button onclick="location.href='marketplace.html'">🛒 Marketplace</button>
-      <button onclick="location.href='faceswipe.html'">😊 Face Swipe</button>
-      <button onclick="location.href='career.html'">🎯 Career</button>
-      <button onclick="location.href='upcoming.html'">🚀 Upcoming</button>
-      <button onclick="location.href='account.html'">👤 Account</button>
-      <button onclick="location.href='wallet.html'">👛 Wallet</button>
+      <button onclick="show404()">🏠 Home</button>
+      <button onclick="show404()">🛠 Create</button>
+      <button onclick="show404()">🛍 Shopping Mall</button>
+      <button onclick="show404()">📚 Education</button>
+      <button onclick="show404()">🎤 Singing</button>
+      <button onclick="show404()">❤️ Dating</button>
+      <button onclick="show404()">🎬 Video Editor</button>
+      <button onclick="show404()">🎧 Audio Editor</button>
+      <button onclick="show404()">🛒 Marketplace</button>
+      <button onclick="show404()">😊 Face Swipe</button>
+      <button onclick="show404()">🎯 Career</button>
+      <button onclick="show404()">🚀 Upcoming</button>
+      <button onclick="show404()">👤 Account</button>
+      <button onclick="show404()">👛 Wallet</button>
     </nav>
   </header>
 
@@ -81,11 +63,22 @@
   </main>
 
   <footer class="bottom-nav">
-    <a href="index.html">🏠</a>
-    <a href="search.html">🔍</a>
-    <a href="upload.html">➕</a>
-    <a href="subscription.html">❤️</a>
-    <a href="account.html">👤</a>
+    <button onclick="navigate('reels')">🏠</button>
+    <button onclick="navigate('search')">🔍</button>
+    <button onclick="navigate('create')">➕</button>
+    <button onclick="navigate('subscription')">🎟️</button>
+    <button onclick="navigate('account')">👤</button>
   </footer>
+
+  <script>
+    function show404() {
+      alert("Page Not Found");
+    }
+
+    function navigate(section) {
+      alert("Opening: " + section.charAt(0).toUpperCase() + section.slice(1));
+      // In real site, use: window.location.href = section + ".html";
+    }
+  </script>
 </body>
 </html>
