@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,25 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TubeEarn - Multi-System Platform</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f5f5f5;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .bottom-nav a {
+      text-decoration: none;
+      font-size: 22px;
+      color: #000;
+    }
+    .bottom-nav a:hover {
+      color: blue;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>TubeEarn - World's Fastest Multi-System Platform</h1>
     <nav class="top-nav">
-      <button>🏠 Home</button>
-      <button>🛠 Create</button>
-      <button>🛍 Shopping Mall</button>
-      <button>📚 Education</button>
-      <button>🎤 Singing</button>
-      <button>❤️ Dating</button>
-      <button>🎬 Video Editor</button>
-      <button>🎧 Audio Editor</button>
-      <button>🛒 Marketplace</button>
-      <button>😊 Face Swipe</button>
-      <button>🎯 Career</button>
-      <button>🚀 Upcoming</button>
-      <button>👤 Account</button>
-      <button>👛 Wallet</button>
+      <button onclick="location.href='index.html'">🏠 Home</button>
+      <button onclick="location.href='create.html'">🛠 Create</button>
+      <button onclick="location.href='shop.html'">🛍 Shopping Mall</button>
+      <button onclick="location.href='education.html'">📚 Education</button>
+      <button onclick="location.href='singing.html'">🎤 Singing</button>
+      <button onclick="location.href='dating.html'">❤️ Dating</button>
+      <button onclick="location.href='video-editor.html'">🎬 Video Editor</button>
+      <button onclick="location.href='audio-editor.html'">🎧 Audio Editor</button>
+      <button onclick="location.href='marketplace.html'">🛒 Marketplace</button>
+      <button onclick="location.href='faceswipe.html'">😊 Face Swipe</button>
+      <button onclick="location.href='career.html'">🎯 Career</button>
+      <button onclick="location.href='upcoming.html'">🚀 Upcoming</button>
+      <button onclick="location.href='account.html'">👤 Account</button>
+      <button onclick="location.href='wallet.html'">👛 Wallet</button>
     </nav>
   </header>
 
@@ -63,11 +81,11 @@
   </main>
 
   <footer class="bottom-nav">
-    <button>🏠</button>
-    <button>🔍</button>
-    <button>➕</button>
-    <button>❤️</button>
-    <button>👤</button>
+    <a href="index.html">🏠</a>
+    <a href="search.html">🔍</a>
+    <a href="upload.html">➕</a>
+    <a href="subscription.html">❤️</a>
+    <a href="account.html">👤</a>
   </footer>
 </body>
 </html>
