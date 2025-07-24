@@ -1,84 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TubeEarn - Multi-System Platform</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TubeEarn Navigation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .top-bar {
+      background-color: #0b2c4d;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .top-menu {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #0b2c4d;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    .top-menu button {
+      background-color: #a6dbe8;
+      border: none;
+      margin: 5px;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #0b2c4d;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    .bottom-nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 2px solid #0b2c4d;
+      padding: 20px;
+      z-index: 1000;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .popup button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #0b2c4d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-
-  <header>
-    <h1>TubeEarn - World's Fastest Multi-System Platform</h1>
-    <nav class="top-nav">
-      <button onclick="show404()">🏠 Home</button>
-      <button onclick="show404()">🛠 Create</button>
-      <button onclick="show404()">🛍 Shopping Mall</button>
-      <button onclick="show404()">📚 Education</button>
-      <button onclick="show404()">🎤 Singing</button>
-      <button onclick="show404()">❤️ Dating</button>
-      <button onclick="show404()">🎬 Video Editor</button>
-      <button onclick="show404()">🎧 Audio Editor</button>
-      <button onclick="show404()">🛒 Marketplace</button>
-      <button onclick="show404()">😊 Face Swipe</button>
-      <button onclick="show404()">🎯 Career</button>
-      <button onclick="show404()">🚀 Upcoming</button>
-      <button onclick="show404()">👤 Account</button>
-      <button onclick="show404()">👛 Wallet</button>
-    </nav>
-  </header>
-
-  <main>
-    <section class="story-section">
-      <h2>Story</h2>
-      <div class="story-circles">
-        <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
-      </div>
-      <p>This is the hub for trending videos, earnings summary, news and more.</p>
-    </section>
-
-    <section class="reels-section">
-      <h2>REELS 👉</h2>
-      <div class="reels-container">
-        <div class="reel"><img src="reel1.jpg" alt="Reel 1" /><p>5,291 ❤️</p></div>
-        <div class="reel"><img src="reel2.jpg" alt="Reel 2" /><p>536K ❤️</p></div>
-      </div>
-    </section>
-
-    <section class="trending-section">
-      <h2>Tranding Video 👉</h2>
-      <div class="trending-container">
-        <div class="video"><img src="trend1.jpg" alt="Video 1" /><p>20:41</p></div>
-        <div class="video"><img src="trend2.jpg" alt="Video 2" /><p>20:10</p></div>
-      </div>
-    </section>
-
-    <section class="ads-section">
-      <h2>Ads section 👉</h2>
-      <div class="ads-container">
-        <div class="ad"><img src="ad1.jpg" alt="Ad 1" /><p>1:47:26</p></div>
-        <div class="ad"><img src="ad2.jpg" alt="Ad 2" /><p>2:48:24</p></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bottom-nav">
-    <button onclick="navigate('reels')">🏠</button>
-    <button onclick="navigate('search')">🔍</button>
-    <button onclick="navigate('create')">➕</button>
-    <button onclick="navigate('subscription')">🎟️</button>
-    <button onclick="navigate('account')">👤</button>
-  </footer>
-
-  <script>
-    function show404() {
-      alert("Page Not Found");
+  <div class="top-bar">
+    TubeEarn - World's Fastest Multi-System Platform
+  </div>
+  <div class="top-menu">
+    <button>🏠 Home</button>
+    <button>🎬 Create</button>
+    <button>🛍️ Shopping Mall</button>
+    <button>📚 Education</button>
+    <button>🎤 Singing</button>
+    <button>💖 Dating</button>
+    <button>🎞️ Video Editor</button>
+    <button>🎧 Audio Editor</button>
+    <button>🛒 Marketplace</button>
+    <button>🙂 Face Swipe</button>
+    <button>💼 Career</button>
+    <button>🔔 Upcoming</button>
+    <button>👤 Account</button>
+    <button>💰 Wallet</button>
+  </div>  <div class="popup" id="apkPopup">
+    <p>📲 Download TubeEarn App</p>
+    <button onclick="dismissPopup()">Download</button>
+  </div>  <div class="bottom-nav">
+    <button>🏠<br>Home</button>
+    <button>🔍<br>Search</button>
+    <button>🎞<br>Shorts</button>
+    <button>➕<br>Create</button>
+    <button>🔔<br>Subscription</button>
+    <button>👤<br>Account</button>
+  </div>  <script>
+    // Show APK popup once
+    window.onload = () => {
+      if (!localStorage.getItem('apkPopupShown')) {
+        document.getElementById('apkPopup').style.display = 'block';
+        localStorage.setItem('apkPopupShown', 'true');
+      }
+    };
+    function dismissPopup() {
+      document.getElementById('apkPopup').style.display = 'none';
     }
-
-    function navigate(section) {
-      alert("Opening: " + section.charAt(0).toUpperCase() + section.slice(1));
-      // In real site, use: window.location.href = section + ".html";
-    }
-  </script>
-</body>
+  </script></body>
 </html>
