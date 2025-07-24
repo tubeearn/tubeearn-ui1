@@ -1,148 +1,108 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TubeEarn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TubeEarn - World's Fastest Multi-System Platform</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f0f8ff;
-    }
-    header {
-      background: #000;
-      color: #fff;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header .logo {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .welcome {
-      white-space: nowrap;
-      overflow: hidden;
-      animation: scroll-left 15s linear infinite;
-      background: #333;
-      color: #fff;
-      padding: 5px 10px;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+    body { background: #f5f5f5; }
+    header { background: #092c5c; color: white; padding: 12px; text-align: center; font-size: 1.1rem; position: sticky; top: 0; z-index: 999; }
+    .nav-bar { display: flex; flex-wrap: wrap; justify-content: center; background: #cbe2f7; padding: 10px; gap: 10px; }
+    .nav-bar button { padding: 10px; border: none; background: #d8f0f8; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .ticker { display: flex; align-items: center; background: #001f3f; color: white; padding: 5px 10px; overflow: hidden; }
+    .ticker img { width: 28px; height: 28px; margin-right: 10px; }
+    .scroll-text { white-space: nowrap; animation: scroll-left 20s linear infinite; }
     @keyframes scroll-left {
-      from { transform: translateX(100%); }
-      to { transform: translateX(-100%); }
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
-    .story-bar {
-      display: flex;
-      overflow-x: auto;
-      padding: 10px;
-      background: #fff;
-    }
-    .story {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #ccc;
-      margin-right: 10px;
-    }
-    .videos {
-      padding: 10px;
-    }
-    .video {
-      background: #ddd;
-      height: 200px;
-      margin-bottom: 10px;
-    }
-    .ads {
-      background: #ffc;
-      padding: 10px;
-      text-align: center;
-    }
+    .section-title { font-size: 24px; font-weight: bold; color: navy; text-align: center; margin-top: 10px; }
+    .section { display: none; padding: 10px; }
+    .active { display: block !important; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+    .grid img { width: 100%; border-radius: 8px; }
     .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      background: #000;
-      color: #fff;
-      padding: 10px 0;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      display: flex; justify-content: space-around;
+      background: #092c5c; padding: 10px 0;
     }
-    .bottom-nav div {
-      text-align: center;
-      cursor: pointer;
+    .bottom-nav button {
+      background: none; border: none; color: white;
+      font-size: 16px; cursor: pointer;
     }
-    #searchBar {
-      display: none;
-      padding: 10px;
-      background: #fff;
-    }
-    #searchBar input {
-      width: 100%;
-      padding: 8px;
-      font-size: 16px;
-    }
-    #popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #ff0;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    #popup button {
-      background: red;
-      color: #fff;
-      border: none;
-      padding: 5px;
+    .bottom-nav .center-btn {
+      background: white; color: #092c5c; border-radius: 50%;
+      width: 50px; height: 50px; font-size: 24px;
+      display: flex; justify-content: center; align-items: center;
+      margin-top: -25px;
     }
   </style>
 </head>
 <body>
-  <div id="popup">
-    <span>Download TubeEarn App Now!</span>
-    <button onclick="closePopup()">X</button>
-  </div>  <header>
-    <div class="logo">TubeEarn</div>
-  </header>  <div class="welcome">Welcome to TubeEarn, world's no.1 growth & earning site</div>  <div class="story-bar">
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-    <div class="story"></div>
-  </div>  <div id="searchBar">
-    <input type="text" placeholder="Search Shorts, Long Videos, Movies..." />
-  </div>  <div class="videos">
-    <div class="video">Random Short/Long Video 1</div>
-    <div class="video">Random Short/Long Video 2</div>
-    <div class="video">Random Short/Long Video 3</div>
-  </div>  <div class="ads">Ad: Promote your content here!</div>  <div class="bottom-nav">
-    <div onclick="navigate('home')">🏠<br>Home</div>
-    <div onclick="toggleSearch()">🔍<br>Search</div>
-    <div onclick="navigate('shorts')">🎬<br>Shorts</div>
-    <div onclick="navigate('add')">➕<br>Add</div>
-    <div onclick="navigate('subs')">⭐<br>Subs</div>
-    <div onclick="navigate('account')">👤<br>Account</div>
-  </div>  <script>
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-      localStorage.setItem('popupShown', 'true');
+
+  <header>TubeEarn - World's Fastest Multi-System Platform</header>
+
+  <div class="nav-bar">
+    <button onclick="showSection('home')">🏠 Home</button>
+    <button onclick="showSection('create')">🎥 Create</button>
+    <button onclick="showSection('mall')">🛍️ Shopping Mall</button>
+    <button onclick="showSection('education')">📘 Education</button>
+    <button onclick="showSection('singing')">🎤 Singing</button>
+    <button onclick="showSection('dating')">💖 Dating</button>
+    <button onclick="showSection('videoEditor')">🎬 Video Editor</button>
+    <button onclick="showSection('audioEditor')">🎵 Audio Editor</button>
+    <button onclick="showSection('marketplace')">🛒 Marketplace</button>
+    <button onclick="showSection('faceSwipe')">😊 Face Swipe</button>
+    <button onclick="showSection('career')">🧑‍💼 Career</button>
+    <button onclick="showSection('upcoming')">🚀 Upcoming</button>
+    <button onclick="showSection('account')">👤 Account</button>
+    <button onclick="showSection('wallet')">💼 Wallet</button>
+  </div>
+
+  <div class="ticker">
+    <img src="logo.png" alt="logo" />
+    <div class="scroll-text">Welcome to TubeEarn - Create | Earn | Perform | Educate | Shop | Date & more!</div>
+  </div>
+
+  <!-- SECTIONS -->
+  <div id="home" class="section active">
+    <div class="section-title">📲 REELS 👇</div>
+    <div class="grid"><img src="reel1.jpg"><img src="reel2.jpg"></div>
+    <div class="section-title">🔥 Trending Video 👇</div>
+    <div class="grid"><img src="trend1.jpg"><img src="trend2.jpg"></div>
+    <div class="section-title">📢 Ads Section 👇</div>
+    <div class="grid"><img src="ad1.jpg"><img src="ad2.jpg"><img src="ad3.jpg"><img src="ad4.jpg"></div>
+  </div>
+
+  <div id="create" class="section"><h2 class="section-title">🎥 Create Videos</h2><p style="text-align:center;">Upload your content and start earning!</p></div>
+  <div id="mall" class="section"><h2 class="section-title">🛍️ Shopping Mall</h2><p style="text-align:center;">Buy and sell anything you want!</p></div>
+  <div id="education" class="section"><h2 class="section-title">📘 Education</h2><p style="text-align:center;">Raj Education System – Learn anything!</p></div>
+  <div id="singing" class="section"><h2 class="section-title">🎤 Singing Performance</h2><p style="text-align:center;">Sing songs, get fans, go viral!</p></div>
+  <div id="dating" class="section"><h2 class="section-title">💖 TubeEarn Dating</h2><p style="text-align:center;">Meet, match, and chat with people.</p></div>
+  <div id="videoEditor" class="section"><h2 class="section-title">🎬 Video Editor</h2><p style="text-align:center;">Trim, cut, merge and create reels.</p></div>
+  <div id="audioEditor" class="section"><h2 class="section-title">🎵 Audio Editor</h2><p style="text-align:center;">Edit background music, vocals, remix.</p></div>
+  <div id="marketplace" class="section"><h2 class="section-title">🛒 Marketplace</h2><p style="text-align:center;">Sell digital & physical goods.</p></div>
+  <div id="faceSwipe" class="section"><h2 class="section-title">😊 Face Swipe</h2><p style="text-align:center;">Swipe & connect with others instantly.</p></div>
+  <div id="career" class="section"><h2 class="section-title">🧑‍💼 Career</h2><p style="text-align:center;">Apply for jobs, post your skills.</p></div>
+  <div id="upcoming" class="section"><h2 class="section-title">🚀 Upcoming Features</h2><p style="text-align:center;">New features launching soon!</p></div>
+  <div id="account" class="section"><h2 class="section-title">👤 Account</h2><p style="text-align:center;">Your profile, settings & more.</p></div>
+  <div id="wallet" class="section"><h2 class="section-title">💼 Wallet</h2><p style="text-align:center;">Earned coins, withdrawals & rewards.</p></div>
+
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button onclick="showSection('home')">🏠</button>
+    <button onclick="showSection('create')">🎬 Shorts</button>
+    <button class="center-btn" onclick="showSection('create')">＋</button>
+    <button onclick="showSection('account')">🔔 Sub</button>
+    <button onclick="showSection('wallet')">👤</button>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
     }
-    function toggleSearch() {
-      const bar = document.getElementById('searchBar');
-      bar.style.display = bar.style.display === 'none' ? 'block' : 'none';
-    }
-    function navigate(section) {
-      alert('Navigating to: ' + section);
-    }
-    window.onload = function() {
-      if (localStorage.getItem('popupShown')) {
-        document.getElementById('popup').style.display = 'none';
-      }
-    }
-  </script></body>
+  </script>
+</body>
 </html>
