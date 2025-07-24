@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TubeEarn</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .welcome {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll-left 15s linear infinite;
+      background: #333;
+      color: #fff;
+      padding: 5px 10px;
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+    .story-bar {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px;
+      background: #fff;
+    }
+    .story {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ccc;
+      margin-right: 10px;
+    }
+    .videos {
+      padding: 10px;
+    }
+    .video {
+      background: #ddd;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .ads {
+      background: #ffc;
+      padding: 10px;
+      text-align: center;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background: #000;
+      color: #fff;
+      padding: 10px 0;
+    }
+    .bottom-nav div {
+      text-align: center;
+      cursor: pointer;
+    }
+    #searchBar {
+      display: none;
+      padding: 10px;
+      background: #fff;
+    }
+    #searchBar input {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+    }
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ff0;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #popup button {
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup">
+    <span>Download TubeEarn App Now!</span>
+    <button onclick="closePopup()">X</button>
+  </div>  <header>
+    <div class="logo">TubeEarn</div>
+  </header>  <div class="welcome">Welcome to TubeEarn, world's no.1 growth & earning site</div>  <div class="story-bar">
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+    <div class="story"></div>
+  </div>  <div id="searchBar">
+    <input type="text" placeholder="Search Shorts, Long Videos, Movies..." />
+  </div>  <div class="videos">
+    <div class="video">Random Short/Long Video 1</div>
+    <div class="video">Random Short/Long Video 2</div>
+    <div class="video">Random Short/Long Video 3</div>
+  </div>  <div class="ads">Ad: Promote your content here!</div>  <div class="bottom-nav">
+    <div onclick="navigate('home')">🏠<br>Home</div>
+    <div onclick="toggleSearch()">🔍<br>Search</div>
+    <div onclick="navigate('shorts')">🎬<br>Shorts</div>
+    <div onclick="navigate('add')">➕<br>Add</div>
+    <div onclick="navigate('subs')">⭐<br>Subs</div>
+    <div onclick="navigate('account')">👤<br>Account</div>
+  </div>  <script>
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      localStorage.setItem('popupShown', 'true');
+    }
+    function toggleSearch() {
+      const bar = document.getElementById('searchBar');
+      bar.style.display = bar.style.display === 'none' ? 'block' : 'none';
+    }
+    function navigate(section) {
+      alert('Navigating to: ' + section);
+    }
+    window.onload = function() {
+      if (localStorage.getItem('popupShown')) {
+        document.getElementById('popup').style.display = 'none';
+      }
+    }
+  </script></body>
+</html>
